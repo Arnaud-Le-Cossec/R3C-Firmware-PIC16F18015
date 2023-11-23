@@ -1,0 +1,190 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18015 ]
+[d frameptr 6 ]
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"65 C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"96
+[v _WDT_setup WDT_setup `(v  1 e 1 0 ]
+"101
+[v _SLEEP_start SLEEP_start `(v  1 e 1 0 ]
+"106
+[v _EUSART_setup EUSART_setup `(v  1 e 1 0 ]
+"124
+[v _EUSART_write EUSART_write `(v  1 e 1 0 ]
+"129
+[v _EUSART_print EUSART_print `(v  1 e 1 0 ]
+"137
+[v _EUSART_print_num EUSART_print_num `(v  1 e 1 0 ]
+"446 C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"496
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+[s S165 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"511
+[u S172 . 1 `S165 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES172  1 e 1 @18 ]
+[s S182 . 1 `uc 1 CLC3IF 1 0 :1:0 
+`uc 1 CLC4IF 1 0 :1:1 
+`uc 1 TX1IF 1 0 :1:2 
+`uc 1 RC1IF 1 0 :1:3 
+`uc 1 TX2IF 1 0 :1:4 
+`uc 1 RC2IF 1 0 :1:5 
+`uc 1 SSP1IF 1 0 :1:6 
+`uc 1 BCL1IF 1 0 :1:7 
+]
+"755
+[u S191 . 1 `S182 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES191  1 e 1 @143 ]
+[s S52 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 PS 1 0 :5:1 
+`uc 1 . 1 0 :1:6 
+`uc 1 CS 1 0 :1:7 
+]
+"1145
+[s S57 . 1 `uc 1 SWDTEN 1 0 :1:0 
+`uc 1 WDTPS0 1 0 :1:1 
+`uc 1 WDTPS1 1 0 :1:2 
+`uc 1 WDTPS2 1 0 :1:3 
+`uc 1 WDTPS3 1 0 :1:4 
+`uc 1 WDTPS4 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 WDTCS 1 0 :1:7 
+]
+[s S66 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PS0 1 0 :1:1 
+`uc 1 PS1 1 0 :1:2 
+`uc 1 PS2 1 0 :1:3 
+`uc 1 PS3 1 0 :1:4 
+`uc 1 PS4 1 0 :1:5 
+]
+[u S73 . 1 `S52 1 . 1 0 `S57 1 . 1 0 `S66 1 . 1 0 ]
+[v _WDTCONbits WDTCONbits `VES73  1 e 1 @396 ]
+"9644
+[v _TX2REG TX2REG `VEuc  1 e 1 @1559 ]
+"9671
+[v _SP2BRGL SP2BRGL `VEuc  1 e 1 @1560 ]
+"9691
+[v _SP2BRGH SP2BRGH `VEuc  1 e 1 @1561 ]
+[s S141 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"9728
+[u S150 . 1 `S141 1 . 1 0 ]
+[v _RC2STAbits RC2STAbits `VES150  1 e 1 @1562 ]
+[s S99 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"9790
+[u S108 . 1 `S99 1 . 1 0 ]
+[v _TX2STAbits TX2STAbits `VES108  1 e 1 @1563 ]
+[s S120 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"9852
+[u S129 . 1 `S120 1 . 1 0 ]
+[v _BAUD2CONbits BAUD2CONbits `VES129  1 e 1 @1564 ]
+"16666
+[v _RA5PPS RA5PPS `VEuc  1 e 1 @7569 ]
+"65 C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"73
+[v main@sleep_counter sleep_counter `uc  1 a 1 13 ]
+"94
+} 0
+"96
+[v _WDT_setup WDT_setup `(v  1 e 1 0 ]
+{
+"99
+} 0
+"101
+[v _SLEEP_start SLEEP_start `(v  1 e 1 0 ]
+{
+"104
+} 0
+"106
+[v _EUSART_setup EUSART_setup `(v  1 e 1 0 ]
+{
+"122
+} 0
+"137
+[v _EUSART_print_num EUSART_print_num `(v  1 e 1 0 ]
+{
+[v EUSART_print_num@number number `uc  1 a 1 wreg ]
+"138
+[v EUSART_print_num@c c `uc  1 a 1 3 ]
+"139
+[v EUSART_print_num@d d `uc  1 a 1 1 ]
+"140
+[v EUSART_print_num@u u `uc  1 a 1 0 ]
+"137
+[v EUSART_print_num@number number `uc  1 a 1 wreg ]
+[v EUSART_print_num@number number `uc  1 a 1 2 ]
+"144
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"129 C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+[v _EUSART_print EUSART_print `(v  1 e 1 0 ]
+{
+"130
+[v EUSART_print@c c `uc  1 a 1 6 ]
+"129
+[v EUSART_print@string string `*.25DCuc  1 p 2 1 ]
+"135
+} 0
+"124
+[v _EUSART_write EUSART_write `(v  1 e 1 0 ]
+{
+[v EUSART_write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_write@txData txData `uc  1 a 1 0 ]
+"127
+} 0
