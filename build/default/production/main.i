@@ -10964,15 +10964,22 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\xc.h" 2 3
 # 50 "main.c" 2
-
-
-
-
-
-
-
+# 60 "main.c"
 void WDT_setup(void);
 void SLEEP_start(void);
+
+void I2C_setup(void);
+void I2C_wait(void);
+void I2C_start(void);
+void I2C_RepeatedStart(void);
+void I2C_stop(void);
+void I2C_write(uint8_t data);
+uint8_t I2C_read();
+uint8_t I2C_write_query(uint8_t address, uint8_t data);
+uint8_t I2C_read_query(uint8_t address, uint8_t *data, uint8_t number_of_bytes);
+uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH);
+void I2C_PCF8574_write(void);
+void I2C_PCF8575_read(void);
 
 void EUSART_setup(void);
 void EUSART_write(uint8_t txData);
@@ -10983,41 +10990,171 @@ void main(void) {
 
     TRISA &= !(1<<4);
 
+    ANSELA = 0x0;
+
+
+    I2C_setup();
+
+
     EUSART_setup();
 
+
     WDT_setup();
+
 
     uint8_t sleep_counter = 0;
 
     PORTA |= (1<<4);
 
+    float temp;
+    float humidity;
+
     while(1){
+# 115 "main.c"
+            EUSART_print("Hello ! I am a PIC ! ");
 
 
-        SLEEP_start();
 
 
-        sleep_counter++;
 
-        PORTA &= !(1<<4);
-        EUSART_print("Hello ! I am a PIC ! ");
-        EUSART_print_num(sleep_counter);
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-        PORTA |= (1<<4);
 
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
+
+        I2C_PCF8575_read();
+        _delay((unsigned long)((500)*(1000000/4000.0)));
+
     }
     return;
 }
 
 void WDT_setup(void){
 
+
     WDTCONbits.PS = 0b10000;
 }
 
 void SLEEP_start(void){
+
     __asm("CLRWDT");
+
     __asm("SLEEP");
+}
+
+void I2C_setup(void){
+
+
+    uint8_t i2c_freq = 100;
+
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    ODCONAbits.ODCA1 = 1;
+    ODCONAbits.ODCA2 = 1;
+    RA1PPS = 0x15;
+    RA2PPS = 0x16;
+    SSP1CLKPPS = 0x1;
+    SSP1DATPPS = 0x2;
+
+    SSP1STATbits.SMP = 1;
+
+    SSP1CON1bits.SSPM = 0b1000;
+
+    SSP1CON2 = 0;
+
+    SSP1ADD = 3;
+
+    SSP1CON1bits.SSPEN = 1;
+
+}
+
+void I2C_wait(void){
+   while ((SSP1STAT & 0b00000100) || (SSP1CON2 & 0x00011111));
+}
+
+void I2C_start(void){
+  I2C_wait();
+  SSP1CON2bits.SEN = 1;
+}
+
+void I2C_RepeatedStart(void){
+  I2C_wait();
+  SSP1CON2bits.RSEN = 1;
+}
+
+void I2C_stop(void){
+  I2C_wait();
+  SSP1CON2bits.PEN = 1;
+}
+
+void I2C_write(uint8_t data){
+  I2C_wait();
+  SSP1BUF = data;
+}
+
+uint8_t I2C_read(){
+
+  uint8_t tmp;
+  I2C_wait();
+  SSP1CON2bits.RCEN = 1;
+  PORTA &= !(1<<4);
+  I2C_wait();
+
+
+  PORTA |= (1<<4);
+  tmp = SSP1BUF;
+  I2C_wait();
+  SSP1CON2bits.ACKDT = 0;
+  SSP1CON2bits.ACKEN = 1;
+  return tmp;
+}
+
+uint8_t I2C_write_query(uint8_t address, uint8_t data){
+    I2C_start();
+    address = (address << 1)&0b11111110;
+    I2C_write(address & 0b11111110);
+    I2C_write(data);
+    I2C_stop();
+    return 0;
+}
+
+uint8_t I2C_read_query(uint8_t address, uint8_t *data, uint8_t number_of_bytes){
+    I2C_start();
+    address = (address << 1)&0b11111110;
+    I2C_write(address | 0b00000001);
+    for(int i=0; i<number_of_bytes; i++){
+        data[i] = I2C_read();
+    }
+    I2C_stop();
+    return 0;
+}
+
+uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH){
+    I2C_write_query(0x44,0xFD);
+    _delay((unsigned long)((10)*(1000000/4000.0)));
+    uint8_t rx_data[6];
+    I2C_read_query(0x44, rx_data, 6);
+    uint16_t raw_temp = (rx_data[0]<<8) + rx_data[1];
+
+    uint16_t raw_rh = (rx_data[3]<<8) + rx_data[4];
+
+    *t_degC = -45.0 + (175.0 * (raw_temp/65535.0));
+    *rh_pRH = -6.0 + (125.0 * (raw_rh/65535.0));
+    if (*rh_pRH > 100){
+        *rh_pRH = 100;
+    }
+    if (*rh_pRH < 0){
+        *rh_pRH = 0;
+    }
+    return 0;
+}
+
+void I2C_PCF8574_write(void){
+    I2C_write_query(0x27,0x01);
+}
+
+void I2C_PCF8575_read(void){
+    uint8_t rx_data[11];
+
+
+    I2C_read_query(0x27, rx_data, 11);
 }
 
 void EUSART_setup(void){
@@ -11053,8 +11190,8 @@ void EUSART_print(const char* string){
 
 void EUSART_print_num(uint8_t number){
     uint8_t c = (number/100);
-    uint8_t d = ((number-c)/10);
-    uint8_t u = (number-c-d);
+    uint8_t d = (number/10)%10;
+    uint8_t u = (number)%10;
     EUSART_write(c+48);
     EUSART_write(d+48);
     EUSART_write(u+48);
