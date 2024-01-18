@@ -663,6 +663,8 @@
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
         <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/Nono/MPLABXProjects/R3C_PIC16F18015.X/debug/default/R3C_PIC16F18015_ptg"/>
         <property key="programmerToGoImageName" value="R3C_PIC16F18015_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

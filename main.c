@@ -53,6 +53,8 @@
 #define _XTAL_FREQ 1000000  // 32Mhz configuration de la carte
 
 #define LED_PIN 4
+#define BATT_PIN 0
+#define BATT_MAX_VOLTAGE_MV 500.0
 
 #define SLEEP_COUNTER_THRESHOLD_DEFAULT 14
 
@@ -78,6 +80,9 @@ void EUSART_write(uint8_t txData);
 void EUSART_print(const char* string);
 void EUSART_print_num(uint8_t number);
 
+void Analog_setup(void);
+uint16_t Analog_read(void);
+
 void main(void) {
     
     TRISA &= !(1<<LED_PIN);		// Set outputs
@@ -89,6 +94,9 @@ void main(void) {
     
     /*Setup serial communication*/
     EUSART_setup();
+    
+    /*Setup ADC*/
+    Analog_setup();
     
     /*Setup watchdog*/
     WDT_setup();
@@ -112,8 +120,13 @@ void main(void) {
         //if(sleep_counter >= SLEEP_COUNTER_THRESHOLD_DEFAULT){
             /*Sleep*/
         //    sleep_counter = 0;
-            EUSART_print("Hello ! I am a PIC ! ");
+        EUSART_print("Hello ! I am a PIC ! ");
+            
         //}
+            
+        uint16_t a = Analog_read();
+        uint8_t r = a*(100.0/1023.0);  
+        EUSART_print_num(r);
         
         //EUSART_print_num(sleep_counter);
         //blink led for debugging
@@ -121,8 +134,8 @@ void main(void) {
         //I2C_SHT4x_read(&temp, &humidity);
         //I2C_PCF8574_write();
         I2C_MCP23008_read();
-        __delay_ms(500);
-        //PORTA ^= (1<<LED_PIN);		// Set LED to 1
+        __delay_ms(1000);
+        PORTA ^= (1<<LED_PIN);		// Set LED to 1
     }
     return;
 }
@@ -191,15 +204,10 @@ void I2C_write(uint8_t data){
 }
 
 uint8_t I2C_read(){
-  //PORTA ^= (1<<LED_PIN);		// Set LED to 1
   uint8_t tmp;
   I2C_wait();
   SSP1CON2bits.RCEN = 1;
-  PORTA &= !(1<<LED_PIN);		// Set LED to 0
   I2C_wait();
-  //
-  //while(SSP1STAT & 0b00000001);
-  PORTA |= (1<<LED_PIN);		// Set LED to 1
   tmp = SSP1BUF;      //Read data from SSP1BUF
   I2C_wait();
   SSP1CON2bits.ACKDT = 0;    //Acknowledge bit
@@ -253,8 +261,6 @@ void I2C_MCP23008_write(void){
 
 void I2C_MCP23008_read(void){
     uint8_t rx_data[11];
-    //I2C_write_query(0x27,0x01);
-    //__delay_ms(1);
     I2C_read_query(0x27, rx_data, 11);
 }
 
@@ -296,4 +302,29 @@ void EUSART_print_num(uint8_t number){
     EUSART_write(c+48);
     EUSART_write(d+48);
     EUSART_write(u+48);
+}
+
+
+void Analog_setup(void){
+    /*Settings valid for PIC16F18015*/
+    TRISA |= (1<<BATT_PIN);         // Set as input
+    ANSELA |= (1<<BATT_PIN);		// Set as analog
+    ADPCH = BATT_PIN & 0b00111111;  // Select channel
+    ADREF = 0x0;                    // Set positive voltage reference to VDD (default)
+    ADCON0bits.CS = 1;              // Use ADC internal clock
+    ADCON0bits.FM = 1;              // result right justified
+}
+
+uint16_t Analog_read_raw(void){
+    ADCON0bits.ON = 1;              // Activate ACD Module
+    ADCON0bits.GO = 1;              // Start conversion
+    while(ADCON0bits.GO);           // Wait for conversion end
+    
+    return ADRES;                   // Return result
+}
+
+uint16_t Analog_read_voltage(void){
+    uint16_t a = Analog_read();
+    uint16_t r = a*(BATT_MAX_VOLTAGE_MV/1023.0);  
+    return ADRES;                   // Return result (mV)
 }

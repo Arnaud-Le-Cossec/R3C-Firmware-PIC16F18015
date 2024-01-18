@@ -10964,7 +10964,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\xc.h" 2 3
 # 50 "main.c" 2
-# 60 "main.c"
+# 61 "main.c"
 void WDT_setup(void);
 void SLEEP_start(void);
 
@@ -10978,13 +10978,16 @@ uint8_t I2C_read();
 uint8_t I2C_write_query(uint8_t address, uint8_t data);
 uint8_t I2C_read_query(uint8_t address, uint8_t *data, uint8_t number_of_bytes);
 uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH);
-void I2C_PCF8574_write(void);
-void I2C_PCF8575_read(void);
+void I2C_MCP23008_write(void);
+void I2C_MCP23008_read(void);
 
 void EUSART_setup(void);
 void EUSART_write(uint8_t txData);
 void EUSART_print(const char* string);
 void EUSART_print_num(uint8_t number);
+
+void Analog_setup(void);
+uint16_t Analog_read(void);
 
 void main(void) {
 
@@ -10999,6 +11002,9 @@ void main(void) {
     EUSART_setup();
 
 
+    Analog_setup();
+
+
     WDT_setup();
 
 
@@ -11010,18 +11016,23 @@ void main(void) {
     float humidity;
 
     while(1){
-# 115 "main.c"
-            EUSART_print("Hello ! I am a PIC ! ");
+# 122 "main.c"
+        EUSART_print("Hello ! I am a PIC ! ");
+
+
+
+        uint16_t a = Analog_read();
+        uint8_t r = a*(100.0/1024.0);
+        EUSART_print_num(r);
 
 
 
 
 
 
-
-        I2C_PCF8575_read();
-        _delay((unsigned long)((500)*(1000000/4000.0)));
-
+        I2C_MCP23008_read();
+        _delay((unsigned long)((1000)*(1000000/4000.0)));
+        PORTA ^= (1<<4);
     }
     return;
 }
@@ -11094,11 +11105,11 @@ uint8_t I2C_read(){
   uint8_t tmp;
   I2C_wait();
   SSP1CON2bits.RCEN = 1;
-  PORTA &= !(1<<4);
+
   I2C_wait();
 
 
-  PORTA |= (1<<4);
+
   tmp = SSP1BUF;
   I2C_wait();
   SSP1CON2bits.ACKDT = 0;
@@ -11146,11 +11157,11 @@ uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH){
     return 0;
 }
 
-void I2C_PCF8574_write(void){
+void I2C_MCP23008_write(void){
     I2C_write_query(0x27,0x01);
 }
 
-void I2C_PCF8575_read(void){
+void I2C_MCP23008_read(void){
     uint8_t rx_data[11];
 
 
@@ -11195,4 +11206,23 @@ void EUSART_print_num(uint8_t number){
     EUSART_write(c+48);
     EUSART_write(d+48);
     EUSART_write(u+48);
+}
+
+
+void Analog_setup(void){
+
+    TRISA |= (1<<0);
+    ANSELA |= (1<<0);
+    ADPCH = 0 & 0b00111111;
+    ADREF = 0x0;
+    ADCON0bits.CS = 1;
+    ADCON0bits.FM = 1;
+}
+
+uint16_t Analog_read(void){
+    ADCON0bits.ON = 1;
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO);
+
+    return ADRES;
 }
