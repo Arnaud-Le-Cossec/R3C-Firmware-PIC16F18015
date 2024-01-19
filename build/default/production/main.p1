@@ -1,42 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"496 C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 496: extern volatile unsigned char TRISA __attribute__((address(0x012)));
-[v _TRISA `Vuc ~T0 @X0 0 e@18 ]
-"17798
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 17798: extern volatile unsigned char ANSELA __attribute__((address(0x1E8C)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@7820 ]
-"64 main.c
-[; ;main.c: 64: void I2C_setup(void);
-[v _I2C_setup `(v ~T0 @X0 0 ef ]
-"77
-[; ;main.c: 77: void EUSART_setup(void);
-[v _EUSART_setup `(v ~T0 @X0 0 ef ]
-"82
-[; ;main.c: 82: void Analog_setup(void);
-[v _Analog_setup `(v ~T0 @X0 0 ef ]
-"61
-[; ;main.c: 61: void WDT_setup(void);
-[v _WDT_setup `(v ~T0 @X0 0 ef ]
-"446 C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 446: extern volatile unsigned char PORTA __attribute__((address(0x00C)));
-[v _PORTA `Vuc ~T0 @X0 0 e@12 ]
-"79 main.c
-[; ;main.c: 79: void EUSART_print(const char* string);
-[v _EUSART_print `(v ~T0 @X0 0 ef1`*Cuc ]
-"83
-[; ;main.c: 83: uint16_t Analog_read(void);
-[v _Analog_read `(us ~T0 @X0 0 ef ]
-"80
-[; ;main.c: 80: void EUSART_print_num(uint8_t number);
-[v _EUSART_print_num `(v ~T0 @X0 0 ef1`uc ]
-"75
-[; ;main.c: 75: void I2C_MCP23008_read(void);
-[v _I2C_MCP23008_read `(v ~T0 @X0 0 ef ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:\Program Files\Microchip\xc8\v2.40\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
 "1120 C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 1120:     struct {
 [s S59 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -56,6 +18,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1145
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 1145: extern volatile WDTCONbits_t WDTCONbits __attribute__((address(0x18C)));
 [v _WDTCONbits `VS58 ~T0 @X0 0 e@396 ]
+"9841
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9841:     struct {
+[s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S494 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
+"9840
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9840: typedef union {
+[u S493 `S494 1 ]
+[n S493 . . ]
+"9852
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9852: extern volatile BAUD2CONbits_t BAUD2CONbits __attribute__((address(0x61C)));
+[v _BAUD2CONbits `VS493 ~T0 @X0 0 e@1564 ]
+"9779
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9779:     struct {
+[s S492 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S492 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"9778
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9778: typedef union {
+[u S491 `S492 1 ]
+[n S491 . . ]
+"9790
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9790: extern volatile TX2STAbits_t TX2STAbits __attribute__((address(0x61B)));
+[v _TX2STAbits `VS491 ~T0 @X0 0 e@1563 ]
+"9717
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9717:     struct {
+[s S490 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S490 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"9716
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9716: typedef union {
+[u S489 `S490 1 ]
+[n S489 . . ]
+"9728
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9728: extern volatile RC2STAbits_t RC2STAbits __attribute__((address(0x61A)));
+[v _RC2STAbits `VS489 ~T0 @X0 0 e@1562 ]
+"9671
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9671: extern volatile unsigned char SP2BRGL __attribute__((address(0x618)));
+[v _SP2BRGL `Vuc ~T0 @X0 0 e@1560 ]
+"9691
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9691: extern volatile unsigned char SP2BRGH __attribute__((address(0x619)));
+[v _SP2BRGH `Vuc ~T0 @X0 0 e@1561 ]
+"16666
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 16666: extern volatile unsigned char RA5PPS __attribute__((address(0x1D91)));
+[v _RA5PPS `Vuc ~T0 @X0 0 e@7569 ]
+"17486
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 17486: extern volatile unsigned char RX2PPS __attribute__((address(0x1E43)));
+[v _RX2PPS `Vuc ~T0 @X0 0 e@7747 ]
 "502
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 502:     struct {
 [s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -67,6 +74,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "511
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 511: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x012)));
 [v _TRISAbits `VS34 ~T0 @X0 0 e@18 ]
+"744
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 744:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . CLC3IF CLC4IF TX1IF RC1IF TX2IF RC2IF SSP1IF BCL1IF ]
+"743
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 743: typedef union {
+[u S44 `S45 1 ]
+[n S44 . . ]
+"755
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 755: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x08F)));
+[v _PIR3bits `VS44 ~T0 @X0 0 e@143 ]
+"9644
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9644: extern volatile unsigned char TX2REG __attribute__((address(0x617)));
+[v _TX2REG `Vuc ~T0 @X0 0 e@1559 ]
+"9624
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9624: extern volatile unsigned char RC2REG __attribute__((address(0x616)));
+[v _RC2REG `Vuc ~T0 @X0 0 e@1558 ]
 "17932
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 17932:     struct {
 [s S872 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -215,62 +239,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9887
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9887: extern volatile unsigned char SSP1BUF __attribute__((address(0x68C)));
 [v _SSP1BUF `Vuc ~T0 @X0 0 e@1676 ]
-"9779
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9779:     struct {
-[s S492 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S492 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"9778
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9778: typedef union {
-[u S491 `S492 1 ]
-[n S491 . . ]
-"9790
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9790: extern volatile TX2STAbits_t TX2STAbits __attribute__((address(0x61B)));
-[v _TX2STAbits `VS491 ~T0 @X0 0 e@1563 ]
-"9841
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9841:     struct {
-[s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S494 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
-"9840
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9840: typedef union {
-[u S493 `S494 1 ]
-[n S493 . . ]
-"9852
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9852: extern volatile BAUD2CONbits_t BAUD2CONbits __attribute__((address(0x61C)));
-[v _BAUD2CONbits `VS493 ~T0 @X0 0 e@1564 ]
-"9717
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9717:     struct {
-[s S490 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S490 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"9716
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9716: typedef union {
-[u S489 `S490 1 ]
-[n S489 . . ]
-"9728
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9728: extern volatile RC2STAbits_t RC2STAbits __attribute__((address(0x61A)));
-[v _RC2STAbits `VS489 ~T0 @X0 0 e@1562 ]
-"9671
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9671: extern volatile unsigned char SP2BRGL __attribute__((address(0x618)));
-[v _SP2BRGL `Vuc ~T0 @X0 0 e@1560 ]
-"9691
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9691: extern volatile unsigned char SP2BRGH __attribute__((address(0x619)));
-[v _SP2BRGH `Vuc ~T0 @X0 0 e@1561 ]
-"16666
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 16666: extern volatile unsigned char RA5PPS __attribute__((address(0x1D91)));
-[v _RA5PPS `Vuc ~T0 @X0 0 e@7569 ]
-"744
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 744:     struct {
-[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S45 . CLC3IF CLC4IF TX1IF RC1IF TX2IF RC2IF SSP1IF BCL1IF ]
-"743
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 743: typedef union {
-[u S44 `S45 1 ]
-[n S44 . . ]
-"755
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 755: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x08F)));
-[v _PIR3bits `VS44 ~T0 @X0 0 e@143 ]
-"9644
-[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 9644: extern volatile unsigned char TX2REG __attribute__((address(0x617)));
-[v _TX2REG `Vuc ~T0 @X0 0 e@1559 ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:\Program Files\Microchip\xc8\v2.40\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
+"496 C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 496: extern volatile unsigned char TRISA __attribute__((address(0x012)));
+[v _TRISA `Vuc ~T0 @X0 0 e@18 ]
+"17798
+[; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 17798: extern volatile unsigned char ANSELA __attribute__((address(0x1E8C)));
+[v _ANSELA `Vuc ~T0 @X0 0 e@7820 ]
 "15127
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 15127: extern volatile unsigned char ADPCH __attribute__((address(0x1D1F)));
 [v _ADPCH `Vuc ~T0 @X0 0 e@7455 ]
@@ -303,6 +281,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14872
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 14872: extern volatile unsigned short ADRES __attribute__((address(0x1D1D)));
 [v _ADRES `Vus ~T0 @X0 0 e@7453 ]
+"5 ./analog_driver.h
+[; ;./analog_driver.h: 5: uint16_t Analog_read(void);
+[v _Analog_read `(us ~T0 @X0 0 ef ]
+[p mainexit ]
 "14 main.c
 [p x FEXTOSC  =  OFF     ]
 "15
@@ -1257,319 +1239,397 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18647
 [; ;C:/Users/Nono/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.22.376/xc8\pic\include\proc\pic16f18015.h: 18647: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"85 main.c
-[; ;main.c: 85: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"87
-[; ;main.c: 87:     TRISA &= !(1<<4);
-[e =& _TRISA -> -> ! != << -> 1 `i -> 4 `i -> 0 `i `i `Vuc ]
-"89
-[; ;main.c: 89:     ANSELA = 0x0;
-[e = _ANSELA -> -> 0 `i `uc ]
-"92
-[; ;main.c: 92:     I2C_setup();
-[e ( _I2C_setup ..  ]
-"95
-[; ;main.c: 95:     EUSART_setup();
-[e ( _EUSART_setup ..  ]
-"98
-[; ;main.c: 98:     Analog_setup();
-[e ( _Analog_setup ..  ]
-"101
-[; ;main.c: 101:     WDT_setup();
-[e ( _WDT_setup ..  ]
-"104
-[; ;main.c: 104:     uint8_t sleep_counter = 0;
-[v _sleep_counter `uc ~T0 @X0 1 a ]
-[e = _sleep_counter -> -> 0 `i `uc ]
-"106
-[; ;main.c: 106:     PORTA |= (1<<4);
-[e =| _PORTA -> << -> 1 `i -> 4 `i `Vuc ]
-"108
-[; ;main.c: 108:     float temp;
-[v _temp `f ~T0 @X0 1 a ]
-"109
-[; ;main.c: 109:     float humidity;
-[v _humidity `f ~T0 @X0 1 a ]
-"111
-[; ;main.c: 111:     while(1){
-[e :U 920 ]
-{
-"122
-[; ;main.c: 122:         EUSART_print("Hello ! I am a PIC ! ");
-[e ( _EUSART_print (1 :s 1C ]
-"126
-[; ;main.c: 126:         uint16_t a = Analog_read();
-[v _a `us ~T0 @X0 1 a ]
-[e = _a ( _Analog_read ..  ]
-"127
-[; ;main.c: 127:         uint8_t r = a*(100.0/1024.0);
-[v _r `uc ~T0 @X0 1 a ]
-[e = _r -> * -> -> _a `ui `d / .100.0 .1024.0 `uc ]
-"128
-[; ;main.c: 128:         EUSART_print_num(r);
-[e ( _EUSART_print_num (1 _r ]
-"135
-[; ;main.c: 135:         I2C_MCP23008_read();
-[e ( _I2C_MCP23008_read ..  ]
-"136
-[; ;main.c: 136:         _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"137
-[; ;main.c: 137:         PORTA ^= (1<<4);
-[e =^ _PORTA -> << -> 1 `i -> 4 `i `Vuc ]
-"138
-[; ;main.c: 138:     }
-}
-[e :U 919 ]
-[e $U 920  ]
-[e :U 921 ]
-"139
-[; ;main.c: 139:     return;
-[e $UE 918  ]
-"140
-[; ;main.c: 140: }
-[e :UE 918 ]
-}
-"142
-[; ;main.c: 142: void WDT_setup(void){
+"4 ./watchdog_driver.h
+[; ;./watchdog_driver.h: 4: void WDT_setup(void){
 [v _WDT_setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _WDT_setup ]
 [f ]
-"145
-[; ;main.c: 145:     WDTCONbits.PS = 0b10000;
+"7
+[; ;./watchdog_driver.h: 7:     WDTCONbits.PS = 0b10000;
 [e = . . _WDTCONbits 0 1 -> -> 16 `i `uc ]
-"146
-[; ;main.c: 146: }
-[e :UE 922 ]
+"8
+[; ;./watchdog_driver.h: 8: }
+[e :UE 918 ]
 }
-"148
-[; ;main.c: 148: void SLEEP_start(void){
+"10
+[; ;./watchdog_driver.h: 10: void SLEEP_start(void){
 [v _SLEEP_start `(v ~T0 @X0 1 ef ]
 {
 [e :U _SLEEP_start ]
 [f ]
-"150
-[; ;main.c: 150:     __asm("CLRWDT");
+"12
+[; ;./watchdog_driver.h: 12:     __asm("CLRWDT");
 [; <" CLRWDT ;# ">
-"152
-[; ;main.c: 152:     __asm("SLEEP");
+"14
+[; ;./watchdog_driver.h: 14:     __asm("SLEEP");
 [; <" SLEEP ;# ">
-"153
-[; ;main.c: 153: }
-[e :UE 923 ]
+"15
+[; ;./watchdog_driver.h: 15: }
+[e :UE 919 ]
 }
-"155
-[; ;main.c: 155: void I2C_setup(void){
+"6 ./eusart_driver.h
+[; ;./eusart_driver.h: 6: void EUSART_setup(void){
+[v _EUSART_setup `(v ~T0 @X0 1 ef ]
+{
+[e :U _EUSART_setup ]
+[f ]
+"8
+[; ;./eusart_driver.h: 8:     BAUD2CONbits.BRG16 = 1;
+[e = . . _BAUD2CONbits 0 3 -> -> 1 `i `uc ]
+"10
+[; ;./eusart_driver.h: 10:     TX2STAbits.SYNC = 0;
+[e = . . _TX2STAbits 0 4 -> -> 0 `i `uc ]
+"12
+[; ;./eusart_driver.h: 12:     TX2STAbits.TXEN = 1;
+[e = . . _TX2STAbits 0 5 -> -> 1 `i `uc ]
+"14
+[; ;./eusart_driver.h: 14:     TX2STAbits.BRGH = 1;
+[e = . . _TX2STAbits 0 2 -> -> 1 `i `uc ]
+"16
+[; ;./eusart_driver.h: 16:     RC2STAbits.CREN = 1;
+[e = . . _RC2STAbits 0 4 -> -> 1 `i `uc ]
+"18
+[; ;./eusart_driver.h: 18:     RC2STAbits.SPEN = 1;
+[e = . . _RC2STAbits 0 7 -> -> 1 `i `uc ]
+"20
+[; ;./eusart_driver.h: 20:     SP2BRGL = 25;
+[e = _SP2BRGL -> -> 25 `i `uc ]
+"21
+[; ;./eusart_driver.h: 21:     SP2BRGH = 0;
+[e = _SP2BRGH -> -> 0 `i `uc ]
+"23
+[; ;./eusart_driver.h: 23:     RA5PPS = 0x11;
+[e = _RA5PPS -> -> 17 `i `uc ]
+"25
+[; ;./eusart_driver.h: 25:     RX2PPS = 0x4;
+[e = _RX2PPS -> -> 4 `i `uc ]
+"27
+[; ;./eusart_driver.h: 27:     TRISAbits.TRISA5 = 0;
+[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
+"29
+[; ;./eusart_driver.h: 29:     TRISAbits.TRISA4 = 1;
+[e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
+"30
+[; ;./eusart_driver.h: 30: }
+[e :UE 920 ]
+}
+"32
+[; ;./eusart_driver.h: 32: void EUSART_write(uint8_t txData){
+[v _EUSART_write `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _EUSART_write ]
+[v _txData `uc ~T0 @X0 1 r1 ]
+[f ]
+"33
+[; ;./eusart_driver.h: 33:     while(PIR3bits.TX2IF == 0){}
+[e $U 922  ]
+[e :U 923 ]
+{
+}
+[e :U 922 ]
+[e $ == -> . . _PIR3bits 0 4 `i -> 0 `i 923  ]
+[e :U 924 ]
+"34
+[; ;./eusart_driver.h: 34:     TX2REG = txData;
+[e = _TX2REG _txData ]
+"35
+[; ;./eusart_driver.h: 35: }
+[e :UE 921 ]
+}
+"37
+[; ;./eusart_driver.h: 37: uint8_t EUSART_read_wait(void){
+[v _EUSART_read_wait `(uc ~T0 @X0 1 ef ]
+{
+[e :U _EUSART_read_wait ]
+[f ]
+"38
+[; ;./eusart_driver.h: 38:     while(!PIR3bits.RC2IF);
+[e $U 926  ]
+[e :U 927 ]
+[e :U 926 ]
+[e $ ! != -> . . _PIR3bits 0 5 `i -> 0 `i 927  ]
+[e :U 928 ]
+"39
+[; ;./eusart_driver.h: 39:     return RC2REG;
+[e ) _RC2REG ]
+[e $UE 925  ]
+"40
+[; ;./eusart_driver.h: 40: }
+[e :UE 925 ]
+}
+"42
+[; ;./eusart_driver.h: 42: void EUSART_print(const char* string){
+[v _EUSART_print `(v ~T0 @X0 1 ef1`*Cuc ]
+{
+[e :U _EUSART_print ]
+[v _string `*Cuc ~T0 @X0 1 r1 ]
+[f ]
+"43
+[; ;./eusart_driver.h: 43:     uint8_t c=0;
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c -> -> 0 `i `uc ]
+"44
+[; ;./eusart_driver.h: 44:     while(string[c]!=0){
+[e $U 930  ]
+[e :U 931 ]
+{
+"45
+[; ;./eusart_driver.h: 45:         EUSART_write(string[c]);
+[e ( _EUSART_write (1 -> *U + _string * -> _c `ux -> -> # *U _string `ui `ux `uc ]
+"46
+[; ;./eusart_driver.h: 46:         c++;
+[e ++ _c -> -> 1 `i `uc ]
+"47
+[; ;./eusart_driver.h: 47:     }
+}
+[e :U 930 ]
+"44
+[; ;./eusart_driver.h: 44:     while(string[c]!=0){
+[e $ != -> *U + _string * -> _c `ux -> -> # *U _string `ui `ux `i -> 0 `i 931  ]
+[e :U 932 ]
+"48
+[; ;./eusart_driver.h: 48: }
+[e :UE 929 ]
+}
+"50
+[; ;./eusart_driver.h: 50: void EUSART_print_num(uint8_t number){
+[v _EUSART_print_num `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _EUSART_print_num ]
+[v _number `uc ~T0 @X0 1 r1 ]
+[f ]
+"51
+[; ;./eusart_driver.h: 51:     uint8_t c = (number/100);
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c -> / -> _number `i -> 100 `i `uc ]
+"52
+[; ;./eusart_driver.h: 52:     uint8_t d = (number/10)%10;
+[v _d `uc ~T0 @X0 1 a ]
+[e = _d -> % / -> _number `i -> 10 `i -> 10 `i `uc ]
+"53
+[; ;./eusart_driver.h: 53:     uint8_t u = (number)%10;
+[v _u `uc ~T0 @X0 1 a ]
+[e = _u -> % -> _number `i -> 10 `i `uc ]
+"54
+[; ;./eusart_driver.h: 54:     EUSART_write(c+48);
+[e ( _EUSART_write (1 -> + -> _c `i -> 48 `i `uc ]
+"55
+[; ;./eusart_driver.h: 55:     EUSART_write(d+48);
+[e ( _EUSART_write (1 -> + -> _d `i -> 48 `i `uc ]
+"56
+[; ;./eusart_driver.h: 56:     EUSART_write(u+48);
+[e ( _EUSART_write (1 -> + -> _u `i -> 48 `i `uc ]
+"57
+[; ;./eusart_driver.h: 57: }
+[e :UE 933 ]
+}
+"15 ./i2c_driver.h
+[; ;./i2c_driver.h: 15: void I2C_setup(void){
 [v _I2C_setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_setup ]
 [f ]
-"158
-[; ;main.c: 158:     uint8_t i2c_freq = 100;
+"18
+[; ;./i2c_driver.h: 18:     uint8_t i2c_freq = 100;
 [v _i2c_freq `uc ~T0 @X0 1 a ]
 [e = _i2c_freq -> -> 100 `i `uc ]
-"160
-[; ;main.c: 160:     TRISAbits.TRISA1 = 1;
+"20
+[; ;./i2c_driver.h: 20:     TRISAbits.TRISA1 = 1;
 [e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
-"161
-[; ;main.c: 161:     TRISAbits.TRISA2 = 1;
+"21
+[; ;./i2c_driver.h: 21:     TRISAbits.TRISA2 = 1;
 [e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
-"162
-[; ;main.c: 162:     ODCONAbits.ODCA1 = 1;
+"22
+[; ;./i2c_driver.h: 22:     ODCONAbits.ODCA1 = 1;
 [e = . . _ODCONAbits 0 1 -> -> 1 `i `uc ]
-"163
-[; ;main.c: 163:     ODCONAbits.ODCA2 = 1;
+"23
+[; ;./i2c_driver.h: 23:     ODCONAbits.ODCA2 = 1;
 [e = . . _ODCONAbits 0 2 -> -> 1 `i `uc ]
-"164
-[; ;main.c: 164:     RA1PPS = 0x15;
+"24
+[; ;./i2c_driver.h: 24:     RA1PPS = 0x15;
 [e = _RA1PPS -> -> 21 `i `uc ]
-"165
-[; ;main.c: 165:     RA2PPS = 0x16;
+"25
+[; ;./i2c_driver.h: 25:     RA2PPS = 0x16;
 [e = _RA2PPS -> -> 22 `i `uc ]
-"166
-[; ;main.c: 166:     SSP1CLKPPS = 0x1;
+"26
+[; ;./i2c_driver.h: 26:     SSP1CLKPPS = 0x1;
 [e = _SSP1CLKPPS -> -> 1 `i `uc ]
-"167
-[; ;main.c: 167:     SSP1DATPPS = 0x2;
+"27
+[; ;./i2c_driver.h: 27:     SSP1DATPPS = 0x2;
 [e = _SSP1DATPPS -> -> 2 `i `uc ]
-"169
-[; ;main.c: 169:     SSP1STATbits.SMP = 1;
+"29
+[; ;./i2c_driver.h: 29:     SSP1STATbits.SMP = 1;
 [e = . . _SSP1STATbits 0 7 -> -> 1 `i `uc ]
-"171
-[; ;main.c: 171:     SSP1CON1bits.SSPM = 0b1000;
+"31
+[; ;./i2c_driver.h: 31:     SSP1CON1bits.SSPM = 0b1000;
 [e = . . _SSP1CON1bits 0 0 -> -> 8 `i `uc ]
-"173
-[; ;main.c: 173:     SSP1CON2 = 0;
+"33
+[; ;./i2c_driver.h: 33:     SSP1CON2 = 0;
 [e = _SSP1CON2 -> -> 0 `i `uc ]
-"175
-[; ;main.c: 175:     SSP1ADD = 3;
+"35
+[; ;./i2c_driver.h: 35:     SSP1ADD = 3;
 [e = _SSP1ADD -> -> 3 `i `uc ]
-"177
-[; ;main.c: 177:     SSP1CON1bits.SSPEN = 1;
+"37
+[; ;./i2c_driver.h: 37:     SSP1CON1bits.SSPEN = 1;
 [e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
-"179
-[; ;main.c: 179: }
-[e :UE 924 ]
+"39
+[; ;./i2c_driver.h: 39: }
+[e :UE 934 ]
 }
-"181
-[; ;main.c: 181: void I2C_wait(void){
+"41
+[; ;./i2c_driver.h: 41: void I2C_wait(void){
 [v _I2C_wait `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_wait ]
 [f ]
-"182
-[; ;main.c: 182:    while ((SSP1STAT & 0b00000100) || (SSP1CON2 & 0x00011111));
-[e $U 926  ]
-[e :U 927 ]
-[e :U 926 ]
-[e $ || != & -> _SSP1STAT `i -> 4 `i -> 0 `i != & -> _SSP1CON2 `l -> 69905 `l -> -> 0 `i `l 927  ]
-[e :U 928 ]
-"183
-[; ;main.c: 183: }
-[e :UE 925 ]
+"42
+[; ;./i2c_driver.h: 42:    while ((SSP1STAT & 0b00000100) || (SSP1CON2 & 0x00011111));
+[e $U 936  ]
+[e :U 937 ]
+[e :U 936 ]
+[e $ || != & -> _SSP1STAT `i -> 4 `i -> 0 `i != & -> _SSP1CON2 `l -> 69905 `l -> -> 0 `i `l 937  ]
+[e :U 938 ]
+"43
+[; ;./i2c_driver.h: 43: }
+[e :UE 935 ]
 }
-"185
-[; ;main.c: 185: void I2C_start(void){
+"45
+[; ;./i2c_driver.h: 45: void I2C_start(void){
 [v _I2C_start `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_start ]
 [f ]
-"186
-[; ;main.c: 186:   I2C_wait();
+"46
+[; ;./i2c_driver.h: 46:   I2C_wait();
 [e ( _I2C_wait ..  ]
-"187
-[; ;main.c: 187:   SSP1CON2bits.SEN = 1;
+"47
+[; ;./i2c_driver.h: 47:   SSP1CON2bits.SEN = 1;
 [e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
-"188
-[; ;main.c: 188: }
-[e :UE 929 ]
+"48
+[; ;./i2c_driver.h: 48: }
+[e :UE 939 ]
 }
-"190
-[; ;main.c: 190: void I2C_RepeatedStart(void){
+"50
+[; ;./i2c_driver.h: 50: void I2C_RepeatedStart(void){
 [v _I2C_RepeatedStart `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_RepeatedStart ]
 [f ]
-"191
-[; ;main.c: 191:   I2C_wait();
+"51
+[; ;./i2c_driver.h: 51:   I2C_wait();
 [e ( _I2C_wait ..  ]
-"192
-[; ;main.c: 192:   SSP1CON2bits.RSEN = 1;
+"52
+[; ;./i2c_driver.h: 52:   SSP1CON2bits.RSEN = 1;
 [e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
-"193
-[; ;main.c: 193: }
-[e :UE 930 ]
+"53
+[; ;./i2c_driver.h: 53: }
+[e :UE 940 ]
 }
-"195
-[; ;main.c: 195: void I2C_stop(void){
+"55
+[; ;./i2c_driver.h: 55: void I2C_stop(void){
 [v _I2C_stop `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_stop ]
 [f ]
-"196
-[; ;main.c: 196:   I2C_wait();
+"56
+[; ;./i2c_driver.h: 56:   I2C_wait();
 [e ( _I2C_wait ..  ]
-"197
-[; ;main.c: 197:   SSP1CON2bits.PEN = 1;
+"57
+[; ;./i2c_driver.h: 57:   SSP1CON2bits.PEN = 1;
 [e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
-"198
-[; ;main.c: 198: }
-[e :UE 931 ]
+"58
+[; ;./i2c_driver.h: 58: }
+[e :UE 941 ]
 }
-"200
-[; ;main.c: 200: void I2C_write(uint8_t data){
+"60
+[; ;./i2c_driver.h: 60: void I2C_write(uint8_t data){
 [v _I2C_write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _I2C_write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"201
-[; ;main.c: 201:   I2C_wait();
+"61
+[; ;./i2c_driver.h: 61:   I2C_wait();
 [e ( _I2C_wait ..  ]
-"202
-[; ;main.c: 202:   SSP1BUF = data;
+"62
+[; ;./i2c_driver.h: 62:   SSP1BUF = data;
 [e = _SSP1BUF _data ]
-"203
-[; ;main.c: 203: }
-[e :UE 932 ]
+"63
+[; ;./i2c_driver.h: 63: }
+[e :UE 942 ]
 }
-"205
-[; ;main.c: 205: uint8_t I2C_read(){
+"65
+[; ;./i2c_driver.h: 65: uint8_t I2C_read(){
 [v _I2C_read `(uc ~T0 @X0 1 ef ]
 {
 [e :U _I2C_read ]
 [f ]
-"207
-[; ;main.c: 207:   uint8_t tmp;
+"66
+[; ;./i2c_driver.h: 66:   uint8_t tmp;
 [v _tmp `uc ~T0 @X0 1 a ]
-"208
-[; ;main.c: 208:   I2C_wait();
+"67
+[; ;./i2c_driver.h: 67:   I2C_wait();
 [e ( _I2C_wait ..  ]
-"209
-[; ;main.c: 209:   SSP1CON2bits.RCEN = 1;
+"68
+[; ;./i2c_driver.h: 68:   SSP1CON2bits.RCEN = 1;
 [e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
-"211
-[; ;main.c: 211:   I2C_wait();
+"69
+[; ;./i2c_driver.h: 69:   I2C_wait();
 [e ( _I2C_wait ..  ]
-"215
-[; ;main.c: 215:   tmp = SSP1BUF;
+"70
+[; ;./i2c_driver.h: 70:   tmp = SSP1BUF;
 [e = _tmp _SSP1BUF ]
-"216
-[; ;main.c: 216:   I2C_wait();
+"71
+[; ;./i2c_driver.h: 71:   I2C_wait();
 [e ( _I2C_wait ..  ]
-"217
-[; ;main.c: 217:   SSP1CON2bits.ACKDT = 0;
+"72
+[; ;./i2c_driver.h: 72:   SSP1CON2bits.ACKDT = 0;
 [e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
-"218
-[; ;main.c: 218:   SSP1CON2bits.ACKEN = 1;
+"73
+[; ;./i2c_driver.h: 73:   SSP1CON2bits.ACKEN = 1;
 [e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-"219
-[; ;main.c: 219:   return tmp;
+"74
+[; ;./i2c_driver.h: 74:   return tmp;
 [e ) _tmp ]
-[e $UE 933  ]
-"220
-[; ;main.c: 220: }
-[e :UE 933 ]
+[e $UE 943  ]
+"75
+[; ;./i2c_driver.h: 75: }
+[e :UE 943 ]
 }
-"222
-[; ;main.c: 222: uint8_t I2C_write_query(uint8_t address, uint8_t data){
+"77
+[; ;./i2c_driver.h: 77: uint8_t I2C_write_query(uint8_t address, uint8_t data){
 [v _I2C_write_query `(uc ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _I2C_write_query ]
 [v _address `uc ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
 [f ]
-"223
-[; ;main.c: 223:     I2C_start();
+"78
+[; ;./i2c_driver.h: 78:     I2C_start();
 [e ( _I2C_start ..  ]
-"224
-[; ;main.c: 224:     address = (address << 1)&0b11111110;
+"79
+[; ;./i2c_driver.h: 79:     address = (address << 1)&0b11111110;
 [e = _address -> & << -> _address `i -> 1 `i -> 254 `i `uc ]
-"225
-[; ;main.c: 225:     I2C_write(address & 0b11111110);
+"80
+[; ;./i2c_driver.h: 80:     I2C_write(address & 0b11111110);
 [e ( _I2C_write (1 -> & -> _address `i -> 254 `i `uc ]
-"226
-[; ;main.c: 226:     I2C_write(data);
+"81
+[; ;./i2c_driver.h: 81:     I2C_write(data);
 [e ( _I2C_write (1 _data ]
-"227
-[; ;main.c: 227:     I2C_stop();
+"82
+[; ;./i2c_driver.h: 82:     I2C_stop();
 [e ( _I2C_stop ..  ]
-"228
-[; ;main.c: 228:     return 0;
+"83
+[; ;./i2c_driver.h: 83:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 934  ]
-"229
-[; ;main.c: 229: }
-[e :UE 934 ]
+[e $UE 944  ]
+"84
+[; ;./i2c_driver.h: 84: }
+[e :UE 944 ]
 }
-"231
-[; ;main.c: 231: uint8_t I2C_read_query(uint8_t address, uint8_t *data, uint8_t number_of_bytes){
+"86
+[; ;./i2c_driver.h: 86: uint8_t I2C_read_query(uint8_t address, uint8_t *data, uint8_t number_of_bytes){
 [v _I2C_read_query `(uc ~T0 @X0 1 ef3`uc`*uc`uc ]
 {
 [e :U _I2C_read_query ]
@@ -1577,314 +1637,305 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _data `*uc ~T0 @X0 1 r2 ]
 [v _number_of_bytes `uc ~T0 @X0 1 r3 ]
 [f ]
-"232
-[; ;main.c: 232:     I2C_start();
+"87
+[; ;./i2c_driver.h: 87:     I2C_start();
 [e ( _I2C_start ..  ]
-"233
-[; ;main.c: 233:     address = (address << 1)&0b11111110;
+"88
+[; ;./i2c_driver.h: 88:     address = (address << 1)&0b11111110;
 [e = _address -> & << -> _address `i -> 1 `i -> 254 `i `uc ]
-"234
-[; ;main.c: 234:     I2C_write(address | 0b00000001);
+"89
+[; ;./i2c_driver.h: 89:     I2C_write(address | 0b00000001);
 [e ( _I2C_write (1 -> | -> _address `i -> 1 `i `uc ]
-"235
-[; ;main.c: 235:     for(int i=0; i<number_of_bytes; i++){
+"90
+[; ;./i2c_driver.h: 90:     for(int i=0; i<number_of_bytes; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 939  ]
-[e :U 936 ]
+[e $U 949  ]
+[e :U 946 ]
 {
-"236
-[; ;main.c: 236:         data[i] = I2C_read();
+"91
+[; ;./i2c_driver.h: 91:         data[i] = I2C_read();
 [e = *U + _data * -> _i `x -> -> # *U _data `i `x ( _I2C_read ..  ]
-"237
-[; ;main.c: 237:     }
+"92
+[; ;./i2c_driver.h: 92:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 939 ]
-[e $ < _i -> _number_of_bytes `i 936  ]
-[e :U 937 ]
+[e :U 949 ]
+[e $ < _i -> _number_of_bytes `i 946  ]
+[e :U 947 ]
 }
-"238
-[; ;main.c: 238:     I2C_stop();
+"93
+[; ;./i2c_driver.h: 93:     I2C_stop();
 [e ( _I2C_stop ..  ]
-"239
-[; ;main.c: 239:     return 0;
+"94
+[; ;./i2c_driver.h: 94:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 935  ]
-"240
-[; ;main.c: 240: }
-[e :UE 935 ]
+[e $UE 945  ]
+"95
+[; ;./i2c_driver.h: 95: }
+[e :UE 945 ]
 }
-"242
-[; ;main.c: 242: uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH){
+"97
+[; ;./i2c_driver.h: 97: uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH){
 [v _I2C_SHT4x_read `(uc ~T0 @X0 1 ef2`*f`*f ]
 {
 [e :U _I2C_SHT4x_read ]
 [v _t_degC `*f ~T0 @X0 1 r1 ]
 [v _rh_pRH `*f ~T0 @X0 1 r2 ]
 [f ]
-"243
-[; ;main.c: 243:     I2C_write_query(0x44,0xFD);
+"98
+[; ;./i2c_driver.h: 98:     I2C_write_query(0x44,0xFD);
 [e ( _I2C_write_query (2 , -> -> 68 `i `uc -> -> 253 `i `uc ]
-"244
-[; ;main.c: 244:     _delay((unsigned long)((10)*(1000000/4000.0)));
+"99
+[; ;./i2c_driver.h: 99:     _delay((unsigned long)((10)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"245
-[; ;main.c: 245:     uint8_t rx_data[6];
+"100
+[; ;./i2c_driver.h: 100:     uint8_t rx_data[6];
 [v _rx_data `uc ~T0 @X0 -> 6 `i a ]
-"246
-[; ;main.c: 246:     I2C_read_query(0x44, rx_data, 6);
+"101
+[; ;./i2c_driver.h: 101:     I2C_read_query(0x44, rx_data, 6);
 [e ( _I2C_read_query (3 , , -> -> 68 `i `uc &U _rx_data -> -> 6 `i `uc ]
-"247
-[; ;main.c: 247:     uint16_t raw_temp = (rx_data[0]<<8) + rx_data[1];
+"102
+[; ;./i2c_driver.h: 102:     uint16_t raw_temp = (rx_data[0]<<8) + rx_data[1];
 [v _raw_temp `us ~T0 @X0 1 a ]
 [e = _raw_temp -> + << -> *U + &U _rx_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rx_data `ui `ux `i -> 8 `i -> *U + &U _rx_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_data `ui `ux `i `us ]
-"249
-[; ;main.c: 249:     uint16_t raw_rh = (rx_data[3]<<8) + rx_data[4];
+"104
+[; ;./i2c_driver.h: 104:     uint16_t raw_rh = (rx_data[3]<<8) + rx_data[4];
 [v _raw_rh `us ~T0 @X0 1 a ]
 [e = _raw_rh -> + << -> *U + &U _rx_data * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_data `ui `ux `i -> 8 `i -> *U + &U _rx_data * -> -> -> 4 `i `ui `ux -> -> # *U &U _rx_data `ui `ux `i `us ]
-"251
-[; ;main.c: 251:     *t_degC = -45.0 + (175.0 * (raw_temp/65535.0));
+"106
+[; ;./i2c_driver.h: 106:     *t_degC = -45.0 + (175.0 * (raw_temp/65535.0));
 [e = *U _t_degC -> + -U .45.0 * .175.0 / -> -> _raw_temp `ui `d .65535.0 `f ]
-"252
-[; ;main.c: 252:     *rh_pRH = -6.0 + (125.0 * (raw_rh/65535.0));
+"107
+[; ;./i2c_driver.h: 107:     *rh_pRH = -6.0 + (125.0 * (raw_rh/65535.0));
 [e = *U _rh_pRH -> + -U .6.0 * .125.0 / -> -> _raw_rh `ui `d .65535.0 `f ]
-"253
-[; ;main.c: 253:     if (*rh_pRH > 100){
-[e $ ! > *U _rh_pRH -> -> 100 `i `f 941  ]
+"108
+[; ;./i2c_driver.h: 108:     if (*rh_pRH > 100){
+[e $ ! > *U _rh_pRH -> -> 100 `i `f 951  ]
 {
-"254
-[; ;main.c: 254:         *rh_pRH = 100;
+"109
+[; ;./i2c_driver.h: 109:         *rh_pRH = 100;
 [e = *U _rh_pRH -> -> 100 `i `f ]
-"255
-[; ;main.c: 255:     }
+"110
+[; ;./i2c_driver.h: 110:     }
 }
-[e :U 941 ]
-"256
-[; ;main.c: 256:     if (*rh_pRH < 0){
-[e $ ! < *U _rh_pRH -> -> 0 `i `f 942  ]
+[e :U 951 ]
+"111
+[; ;./i2c_driver.h: 111:     if (*rh_pRH < 0){
+[e $ ! < *U _rh_pRH -> -> 0 `i `f 952  ]
 {
-"257
-[; ;main.c: 257:         *rh_pRH = 0;
+"112
+[; ;./i2c_driver.h: 112:         *rh_pRH = 0;
 [e = *U _rh_pRH -> -> 0 `i `f ]
-"258
-[; ;main.c: 258:     }
+"113
+[; ;./i2c_driver.h: 113:     }
 }
-[e :U 942 ]
-"259
-[; ;main.c: 259:     return 0;
+[e :U 952 ]
+"114
+[; ;./i2c_driver.h: 114:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 940  ]
-"260
-[; ;main.c: 260: }
-[e :UE 940 ]
+[e $UE 950  ]
+"115
+[; ;./i2c_driver.h: 115: }
+[e :UE 950 ]
 }
-"262
-[; ;main.c: 262: void I2C_MCP23008_write(void){
-[v _I2C_MCP23008_write `(v ~T0 @X0 1 ef ]
+"117
+[; ;./i2c_driver.h: 117: void I2C_MCP23008_write(uint8_t address, uint8_t reg_addr, uint8_t data){
+[v _I2C_MCP23008_write `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
 [e :U _I2C_MCP23008_write ]
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _reg_addr `uc ~T0 @X0 1 r2 ]
+[v _data `uc ~T0 @X0 1 r3 ]
 [f ]
-"263
-[; ;main.c: 263:     I2C_write_query(0x27,0x01);
-[e ( _I2C_write_query (2 , -> -> 39 `i `uc -> -> 1 `i `uc ]
-"264
-[; ;main.c: 264: }
-[e :UE 943 ]
+"118
+[; ;./i2c_driver.h: 118:     I2C_start();
+[e ( _I2C_start ..  ]
+"119
+[; ;./i2c_driver.h: 119:     address = (address << 1)&0b11111110;
+[e = _address -> & << -> _address `i -> 1 `i -> 254 `i `uc ]
+"120
+[; ;./i2c_driver.h: 120:     I2C_write(address & 0b11111110);
+[e ( _I2C_write (1 -> & -> _address `i -> 254 `i `uc ]
+"121
+[; ;./i2c_driver.h: 121:     I2C_write(reg_addr);
+[e ( _I2C_write (1 _reg_addr ]
+"122
+[; ;./i2c_driver.h: 122:     I2C_write(data);
+[e ( _I2C_write (1 _data ]
+"123
+[; ;./i2c_driver.h: 123:     I2C_stop();
+[e ( _I2C_stop ..  ]
+"124
+[; ;./i2c_driver.h: 124: }
+[e :UE 953 ]
 }
-"266
-[; ;main.c: 266: void I2C_MCP23008_read(void){
+"126
+[; ;./i2c_driver.h: 126: void I2C_MCP23008_read(void){
 [v _I2C_MCP23008_read `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_MCP23008_read ]
 [f ]
-"267
-[; ;main.c: 267:     uint8_t rx_data[11];
+"127
+[; ;./i2c_driver.h: 127:     uint8_t rx_data[11];
 [v _rx_data `uc ~T0 @X0 -> 11 `i a ]
-"270
-[; ;main.c: 270:     I2C_read_query(0x27, rx_data, 11);
+"128
+[; ;./i2c_driver.h: 128:     I2C_read_query(0x27, rx_data, 11);
 [e ( _I2C_read_query (3 , , -> -> 39 `i `uc &U _rx_data -> -> 11 `i `uc ]
-"271
-[; ;main.c: 271: }
-[e :UE 944 ]
-}
-"273
-[; ;main.c: 273: void EUSART_setup(void){
-[v _EUSART_setup `(v ~T0 @X0 1 ef ]
-{
-[e :U _EUSART_setup ]
-[f ]
-"275
-[; ;main.c: 275:     TX2STAbits.TXEN = 1;
-[e = . . _TX2STAbits 0 5 -> -> 1 `i `uc ]
-"277
-[; ;main.c: 277:     TX2STAbits.BRGH = 1;
-[e = . . _TX2STAbits 0 2 -> -> 1 `i `uc ]
-"279
-[; ;main.c: 279:     BAUD2CONbits.BRG16 = 1;
-[e = . . _BAUD2CONbits 0 3 -> -> 1 `i `uc ]
-"281
-[; ;main.c: 281:     RC2STAbits.SPEN = 1;
-[e = . . _RC2STAbits 0 7 -> -> 1 `i `uc ]
-"283
-[; ;main.c: 283:     SP2BRGL = 25;
-[e = _SP2BRGL -> -> 25 `i `uc ]
-"284
-[; ;main.c: 284:     SP2BRGH = 0;
-[e = _SP2BRGH -> -> 0 `i `uc ]
-"286
-[; ;main.c: 286:     RA5PPS = 0x11;
-[e = _RA5PPS -> -> 17 `i `uc ]
-"288
-[; ;main.c: 288:     TRISAbits.TRISA5 = 0;
-[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
-"289
-[; ;main.c: 289: }
-[e :UE 945 ]
-}
-"291
-[; ;main.c: 291: void EUSART_write(uint8_t txData){
-[v _EUSART_write `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _EUSART_write ]
-[v _txData `uc ~T0 @X0 1 r1 ]
-[f ]
-"292
-[; ;main.c: 292:     while(PIR3bits.TX2IF == 0){}
-[e $U 947  ]
-[e :U 948 ]
-{
-}
-[e :U 947 ]
-[e $ == -> . . _PIR3bits 0 4 `i -> 0 `i 948  ]
-[e :U 949 ]
-"293
-[; ;main.c: 293:     TX2REG = txData;
-[e = _TX2REG _txData ]
-"294
-[; ;main.c: 294: }
-[e :UE 946 ]
-}
-"296
-[; ;main.c: 296: void EUSART_print(const char* string){
-[v _EUSART_print `(v ~T0 @X0 1 ef1`*Cuc ]
-{
-[e :U _EUSART_print ]
-[v _string `*Cuc ~T0 @X0 1 r1 ]
-[f ]
-"297
-[; ;main.c: 297:     uint8_t c=0;
-[v _c `uc ~T0 @X0 1 a ]
-[e = _c -> -> 0 `i `uc ]
-"298
-[; ;main.c: 298:     while(string[c]!=0){
-[e $U 951  ]
-[e :U 952 ]
-{
-"299
-[; ;main.c: 299:         EUSART_write(string[c]);
-[e ( _EUSART_write (1 -> *U + _string * -> _c `ux -> -> # *U _string `ui `ux `uc ]
-"300
-[; ;main.c: 300:         c++;
-[e ++ _c -> -> 1 `i `uc ]
-"301
-[; ;main.c: 301:     }
-}
-[e :U 951 ]
-"298
-[; ;main.c: 298:     while(string[c]!=0){
-[e $ != -> *U + _string * -> _c `ux -> -> # *U _string `ui `ux `i -> 0 `i 952  ]
-[e :U 953 ]
-"302
-[; ;main.c: 302: }
-[e :UE 950 ]
-}
-"304
-[; ;main.c: 304: void EUSART_print_num(uint8_t number){
-[v _EUSART_print_num `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _EUSART_print_num ]
-[v _number `uc ~T0 @X0 1 r1 ]
-[f ]
-"305
-[; ;main.c: 305:     uint8_t c = (number/100);
-[v _c `uc ~T0 @X0 1 a ]
-[e = _c -> / -> _number `i -> 100 `i `uc ]
-"306
-[; ;main.c: 306:     uint8_t d = (number/10)%10;
-[v _d `uc ~T0 @X0 1 a ]
-[e = _d -> % / -> _number `i -> 10 `i -> 10 `i `uc ]
-"307
-[; ;main.c: 307:     uint8_t u = (number)%10;
-[v _u `uc ~T0 @X0 1 a ]
-[e = _u -> % -> _number `i -> 10 `i `uc ]
-"308
-[; ;main.c: 308:     EUSART_write(c+48);
-[e ( _EUSART_write (1 -> + -> _c `i -> 48 `i `uc ]
-"309
-[; ;main.c: 309:     EUSART_write(d+48);
-[e ( _EUSART_write (1 -> + -> _d `i -> 48 `i `uc ]
-"310
-[; ;main.c: 310:     EUSART_write(u+48);
-[e ( _EUSART_write (1 -> + -> _u `i -> 48 `i `uc ]
-"311
-[; ;main.c: 311: }
+"129
+[; ;./i2c_driver.h: 129: }
 [e :UE 954 ]
 }
-"314
-[; ;main.c: 314: void Analog_setup(void){
+"7 ./analog_driver.h
+[; ;./analog_driver.h: 7: void Analog_setup(void){
 [v _Analog_setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Analog_setup ]
 [f ]
-"316
-[; ;main.c: 316:     TRISA |= (1<<0);
+"9
+[; ;./analog_driver.h: 9:     TRISA |= (1<<0);
 [e =| _TRISA -> << -> 1 `i -> 0 `i `Vuc ]
-"317
-[; ;main.c: 317:     ANSELA |= (1<<0);
+"10
+[; ;./analog_driver.h: 10:     ANSELA |= (1<<0);
 [e =| _ANSELA -> << -> 1 `i -> 0 `i `Vuc ]
-"318
-[; ;main.c: 318:     ADPCH = 0 & 0b00111111;
+"11
+[; ;./analog_driver.h: 11:     ADPCH = 0 & 0b00111111;
 [e = _ADPCH -> & -> 0 `i -> 63 `i `uc ]
-"319
-[; ;main.c: 319:     ADREF = 0x0;
+"12
+[; ;./analog_driver.h: 12:     ADREF = 0x0;
 [e = _ADREF -> -> 0 `i `uc ]
-"320
-[; ;main.c: 320:     ADCON0bits.CS = 1;
+"13
+[; ;./analog_driver.h: 13:     ADCON0bits.CS = 1;
 [e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
-"321
-[; ;main.c: 321:     ADCON0bits.FM = 1;
+"14
+[; ;./analog_driver.h: 14:     ADCON0bits.FM = 1;
 [e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
-"322
-[; ;main.c: 322: }
+"15
+[; ;./analog_driver.h: 15: }
 [e :UE 955 ]
 }
-"324
-[; ;main.c: 324: uint16_t Analog_read(void){
-[v _Analog_read `(us ~T0 @X0 1 ef ]
+"17
+[; ;./analog_driver.h: 17: uint16_t Analog_read_raw(void){
+[v _Analog_read_raw `(us ~T0 @X0 1 ef ]
 {
-[e :U _Analog_read ]
+[e :U _Analog_read_raw ]
 [f ]
-"325
-[; ;main.c: 325:     ADCON0bits.ON = 1;
+"18
+[; ;./analog_driver.h: 18:     ADCON0bits.ON = 1;
 [e = . . _ADCON0bits 0 6 -> -> 1 `i `uc ]
-"326
-[; ;main.c: 326:     ADCON0bits.GO = 1;
+"19
+[; ;./analog_driver.h: 19:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"327
-[; ;main.c: 327:     while(ADCON0bits.GO);
+"20
+[; ;./analog_driver.h: 20:     while(ADCON0bits.GO);
 [e $U 957  ]
 [e :U 958 ]
 [e :U 957 ]
 [e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 958  ]
 [e :U 959 ]
-"329
-[; ;main.c: 329:     return ADRES;
+"22
+[; ;./analog_driver.h: 22:     return ADRES;
 [e ) _ADRES ]
 [e $UE 956  ]
-"330
-[; ;main.c: 330: }
+"23
+[; ;./analog_driver.h: 23: }
 [e :UE 956 ]
+}
+"25
+[; ;./analog_driver.h: 25: uint16_t Analog_read_voltage(void){
+[v _Analog_read_voltage `(us ~T0 @X0 1 ef ]
+{
+[e :U _Analog_read_voltage ]
+[f ]
+"26
+[; ;./analog_driver.h: 26:     uint16_t a = Analog_read();
+[v _a `us ~T0 @X0 1 a ]
+[e = _a ( _Analog_read ..  ]
+"27
+[; ;./analog_driver.h: 27:     uint16_t r = a*(330.0/1023.0);
+[v _r `us ~T0 @X0 1 a ]
+[e = _r -> * -> -> _a `ui `d / .330.0 .1023.0 `us ]
+"28
+[; ;./analog_driver.h: 28:     return ADRES;
+[e ) _ADRES ]
+[e $UE 960  ]
+"29
+[; ;./analog_driver.h: 29: }
+[e :UE 960 ]
+}
+"3 ./lora_driver.h
+[; ;./lora_driver.h: 3: void LoRa_setup(void){
+[v _LoRa_setup `(v ~T0 @X0 1 ef ]
+{
+[e :U _LoRa_setup ]
+[f ]
+"10
+[; ;./lora_driver.h: 10: }
+[e :UE 961 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"68 main.c
+[; ;main.c: 68: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"70
+[; ;main.c: 70:     TRISA &= !(1<<4);
+[e =& _TRISA -> -> ! != << -> 1 `i -> 4 `i -> 0 `i `i `Vuc ]
+"72
+[; ;main.c: 72:     ANSELA = 0x0;
+[e = _ANSELA -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:     I2C_setup();
+[e ( _I2C_setup ..  ]
+"78
+[; ;main.c: 78:     EUSART_setup();
+[e ( _EUSART_setup ..  ]
+"81
+[; ;main.c: 81:     Analog_setup();
+[e ( _Analog_setup ..  ]
+"84
+[; ;main.c: 84:     WDT_setup();
+[e ( _WDT_setup ..  ]
+"87
+[; ;main.c: 87:     uint8_t sleep_counter = 0;
+[v _sleep_counter `uc ~T0 @X0 1 a ]
+[e = _sleep_counter -> -> 0 `i `uc ]
+"91
+[; ;main.c: 91:     float temp;
+[v _temp `f ~T0 @X0 1 a ]
+"92
+[; ;main.c: 92:     float humidity;
+[v _humidity `f ~T0 @X0 1 a ]
+"94
+[; ;main.c: 94:     while(1){
+[e :U 964 ]
+{
+"105
+[; ;main.c: 105:         EUSART_print("Hello ! I am a PIC ! ");
+[e ( _EUSART_print (1 :s 1C ]
+"118
+[; ;main.c: 118:         I2C_MCP23008_read();
+[e ( _I2C_MCP23008_read ..  ]
+"119
+[; ;main.c: 119:         LoRa_setup();
+[e ( _LoRa_setup ..  ]
+"120
+[; ;main.c: 120:         _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"121
+[; ;main.c: 121:     }
+}
+[e :U 963 ]
+[e $U 964  ]
+[e :U 965 ]
+"122
+[; ;main.c: 122:     return;
+[e $UE 962  ]
+"123
+[; ;main.c: 123: }
+[e :UE 962 ]
 }
 [a 1C 72 101 108 108 111 32 33 32 73 32 97 109 32 97 32 80 73 67 32 33 32 0 ]

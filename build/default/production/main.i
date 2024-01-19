@@ -10964,78 +10964,14 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\xc.h" 2 3
 # 50 "main.c" 2
-# 61 "main.c"
+
+
+
+
+
+# 1 "./watchdog_driver.h" 1
 void WDT_setup(void);
 void SLEEP_start(void);
-
-void I2C_setup(void);
-void I2C_wait(void);
-void I2C_start(void);
-void I2C_RepeatedStart(void);
-void I2C_stop(void);
-void I2C_write(uint8_t data);
-uint8_t I2C_read();
-uint8_t I2C_write_query(uint8_t address, uint8_t data);
-uint8_t I2C_read_query(uint8_t address, uint8_t *data, uint8_t number_of_bytes);
-uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH);
-void I2C_MCP23008_write(void);
-void I2C_MCP23008_read(void);
-
-void EUSART_setup(void);
-void EUSART_write(uint8_t txData);
-void EUSART_print(const char* string);
-void EUSART_print_num(uint8_t number);
-
-void Analog_setup(void);
-uint16_t Analog_read(void);
-
-void main(void) {
-
-    TRISA &= !(1<<4);
-
-    ANSELA = 0x0;
-
-
-    I2C_setup();
-
-
-    EUSART_setup();
-
-
-    Analog_setup();
-
-
-    WDT_setup();
-
-
-    uint8_t sleep_counter = 0;
-
-    PORTA |= (1<<4);
-
-    float temp;
-    float humidity;
-
-    while(1){
-# 122 "main.c"
-        EUSART_print("Hello ! I am a PIC ! ");
-
-
-
-        uint16_t a = Analog_read();
-        uint8_t r = a*(100.0/1024.0);
-        EUSART_print_num(r);
-
-
-
-
-
-
-        I2C_MCP23008_read();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-        PORTA ^= (1<<4);
-    }
-    return;
-}
 
 void WDT_setup(void){
 
@@ -11049,6 +10985,82 @@ void SLEEP_start(void){
 
     __asm("SLEEP");
 }
+# 55 "main.c" 2
+
+# 1 "./eusart_driver.h" 1
+void EUSART_setup(void);
+void EUSART_write(uint8_t txData);
+void EUSART_print(const char* string);
+void EUSART_print_num(uint8_t number);
+
+void EUSART_setup(void){
+
+    BAUD2CONbits.BRG16 = 1;
+
+    TX2STAbits.SYNC = 0;
+
+    TX2STAbits.TXEN = 1;
+
+    TX2STAbits.BRGH = 1;
+
+    RC2STAbits.CREN = 1;
+
+    RC2STAbits.SPEN = 1;
+
+    SP2BRGL = 25;
+    SP2BRGH = 0;
+
+    RA5PPS = 0x11;
+
+    RX2PPS = 0x4;
+
+    TRISAbits.TRISA5 = 0;
+
+    TRISAbits.TRISA4 = 1;
+}
+
+void EUSART_write(uint8_t txData){
+    while(PIR3bits.TX2IF == 0){}
+    TX2REG = txData;
+}
+
+uint8_t EUSART_read_wait(void){
+    while(!PIR3bits.RC2IF);
+    return RC2REG;
+}
+
+void EUSART_print(const char* string){
+    uint8_t c=0;
+    while(string[c]!=0){
+        EUSART_write(string[c]);
+        c++;
+    }
+}
+
+void EUSART_print_num(uint8_t number){
+    uint8_t c = (number/100);
+    uint8_t d = (number/10)%10;
+    uint8_t u = (number)%10;
+    EUSART_write(c+48);
+    EUSART_write(d+48);
+    EUSART_write(u+48);
+}
+# 56 "main.c" 2
+
+# 1 "./i2c_driver.h" 1
+void I2C_setup(void);
+void I2C_wait(void);
+void I2C_start(void);
+void I2C_RepeatedStart(void);
+void I2C_stop(void);
+void I2C_write(uint8_t data);
+uint8_t I2C_read();
+uint8_t I2C_write_query(uint8_t address, uint8_t data);
+uint8_t I2C_read_query(uint8_t address, uint8_t *data, uint8_t number_of_bytes);
+uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH);
+void I2C_MCP23008_write(uint8_t address, uint8_t reg_addr, uint8_t data);
+void I2C_MCP23008_read(void);
+
 
 void I2C_setup(void){
 
@@ -11101,15 +11113,10 @@ void I2C_write(uint8_t data){
 }
 
 uint8_t I2C_read(){
-
   uint8_t tmp;
   I2C_wait();
   SSP1CON2bits.RCEN = 1;
-
   I2C_wait();
-
-
-
   tmp = SSP1BUF;
   I2C_wait();
   SSP1CON2bits.ACKDT = 0;
@@ -11157,57 +11164,27 @@ uint8_t I2C_SHT4x_read(float *t_degC, float *rh_pRH){
     return 0;
 }
 
-void I2C_MCP23008_write(void){
-    I2C_write_query(0x27,0x01);
+void I2C_MCP23008_write(uint8_t address, uint8_t reg_addr, uint8_t data){
+    I2C_start();
+    address = (address << 1)&0b11111110;
+    I2C_write(address & 0b11111110);
+    I2C_write(reg_addr);
+    I2C_write(data);
+    I2C_stop();
 }
 
 void I2C_MCP23008_read(void){
     uint8_t rx_data[11];
-
-
     I2C_read_query(0x27, rx_data, 11);
 }
+# 57 "main.c" 2
 
-void EUSART_setup(void){
+# 1 "./analog_driver.h" 1
 
-    TX2STAbits.TXEN = 1;
 
-    TX2STAbits.BRGH = 1;
 
-    BAUD2CONbits.BRG16 = 1;
-
-    RC2STAbits.SPEN = 1;
-
-    SP2BRGL = 25;
-    SP2BRGH = 0;
-
-    RA5PPS = 0x11;
-
-    TRISAbits.TRISA5 = 0;
-}
-
-void EUSART_write(uint8_t txData){
-    while(PIR3bits.TX2IF == 0){}
-    TX2REG = txData;
-}
-
-void EUSART_print(const char* string){
-    uint8_t c=0;
-    while(string[c]!=0){
-        EUSART_write(string[c]);
-        c++;
-    }
-}
-
-void EUSART_print_num(uint8_t number){
-    uint8_t c = (number/100);
-    uint8_t d = (number/10)%10;
-    uint8_t u = (number)%10;
-    EUSART_write(c+48);
-    EUSART_write(d+48);
-    EUSART_write(u+48);
-}
-
+void Analog_setup(void);
+uint16_t Analog_read(void);
 
 void Analog_setup(void){
 
@@ -11219,10 +11196,67 @@ void Analog_setup(void){
     ADCON0bits.FM = 1;
 }
 
-uint16_t Analog_read(void){
+uint16_t Analog_read_raw(void){
     ADCON0bits.ON = 1;
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO);
 
     return ADRES;
+}
+
+uint16_t Analog_read_voltage(void){
+    uint16_t a = Analog_read();
+    uint16_t r = a*(330.0/1023.0);
+    return ADRES;
+}
+# 58 "main.c" 2
+
+# 1 "./lora_driver.h" 1
+void LoRa_setup(void);
+
+void LoRa_setup(void){
+
+
+
+
+
+
+}
+# 59 "main.c" 2
+# 68 "main.c"
+void main(void) {
+
+    TRISA &= !(1<<4);
+
+    ANSELA = 0x0;
+
+
+    I2C_setup();
+
+
+    EUSART_setup();
+
+
+    Analog_setup();
+
+
+    WDT_setup();
+
+
+    uint8_t sleep_counter = 0;
+
+
+
+    float temp;
+    float humidity;
+
+    while(1){
+# 105 "main.c"
+        EUSART_print("Hello ! I am a PIC ! ");
+# 118 "main.c"
+        I2C_MCP23008_read();
+        LoRa_setup();
+        _delay((unsigned long)((1000)*(1000000/4000.0)));
+    }
+    return;
 }
