@@ -11,32 +11,39 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
+$dist/default/production\R3C_PIC16F18015.X.production.o
+cinit CODE 0 2D 2D D 2 1
+idloc IDLOC 5 8000 8000 4 2 1
+text1 CODE 0 1F0 1F0 6 2 1
+text2 CODE 0 1F9 1F9 3 2 1
+text3 CODE 0 9B 9B 4A 2 1
+text4 CODE 0 3A 3A 61 2 1
+text5 CODE 0 157 157 15 2 1
+text6 CODE 0 16C 16C 14 2 1
+text7 CODE 0 11B 11B 26 2 1
+text8 CODE 0 1D0 1D0 A 2 1
+text9 CODE 0 180 180 14 2 1
+text10 CODE 0 1A1 1A1 D 2 1
+maintext CODE 0 E5 E5 36 2 1
+cstackCOMMON COMMON 1 70 70 C 1 1
+cstackBANK0 BANK0 1 20 20 9 1 1
+stringtext1 STRCODE 0 141 141 16 2 1
+stringtext2 STRCODE 0 194 194 D 2 1
+stringtext3 STRCODE 0 1AE 1AE C 2 1
+stringtext4 STRCODE 0 1BA 1BA B 2 1
+stringtext5 STRCODE 0 1C5 1C5 B 2 1
+stringtext6 STRCODE 0 1DA 1DA 8 2 1
+stringtext7 STRCODE 0 1E2 1E2 8 2 1
+stringtext8 STRCODE 0 1F6 1F6 3 2 1
+intentry CODE 0 4 4 27 2 1
+bssBANK1 BANK1 1 A0 A0 50 1 1
+clrtext CODE 0 1EA 1EA 6 2 1
+bssCOMMON COMMON 1 7C 7C 1 1 1
+config CONFIG 4 8007 8007 5 2 1
+$C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
 idloc IDLOC 5 8000 8000 4 2 1
 reset_vec CODE 0 0 0 2 2 1
-end_init CODE 0 2 2 2 2 1
-config CONFIG 4 8007 8007 5 2 1
-$dist/default/production\R3C_PIC16F18015.X.production.o
-cinit CODE 0 7FD 7FD 3 2 1
-idloc IDLOC 5 8000 8000 4 2 1
-text1 CODE 0 702 702 6 2 1
-text2 CODE 0 6F5 6F5 1 2 1
-text3 CODE 0 763 763 1B 2 1
-text4 CODE 0 710 710 9 2 1
-text5 CODE 0 7CF 7CF 2E 2 1
-text6 CODE 0 708 708 8 2 1
-text7 CODE 0 6FC 6FC 6 2 1
-text8 CODE 0 6F6 6F6 6 2 1
-text9 CODE 0 73C 73C 13 2 1
-text10 CODE 0 723 723 C 2 1
-text11 CODE 0 74F 74F 14 2 1
-text12 CODE 0 77E 77E 26 2 1
-text13 CODE 0 719 719 A 2 1
-text14 CODE 0 72F 72F D 2 1
-maintext CODE 0 7A4 7A4 2B 2 1
-cstackCOMMON COMMON 1 70 70 9 1 1
-cstackBANK0 BANK0 1 20 20 B 1 1
-stringtext1 STRCODE 0 800 800 16 2 1
+end_init CODE 0 2B 2B 2 2 1
 config CONFIG 4 8007 8007 5 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -44,8 +51,7 @@ config CONFIG 4 8007 8007 5 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 2B-6F 1
-RAM A0-EF 1
+RAM 29-6F 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
@@ -57,8 +63,7 @@ RAM 4A0-4EF 1
 RAM 520-56F 1
 RAM 5A0-5EF 1
 RAM 620-64F 1
-BANK0 2B-6F 1
-BANK1 A0-EF 1
+BANK0 29-6F 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
@@ -67,10 +72,10 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-6F4 2
-CONST 816-1FFF 2
-ENTRY 4-6F4 2
-ENTRY 816-1FFF 2
+CONST 2-3 2
+CONST 1FC-1FFF 2
+ENTRY 2-3 2
+ENTRY 1FC-1FFF 2
 SFR10 500-51F 1
 SFR11 580-59F 1
 SFR12 600-61F 1
@@ -125,8 +130,8 @@ SFR60 1E00-1E6F 1
 SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
-CODE 4-6F4 2
-CODE 816-1FFF 2
+CODE 2-3 2
+CODE 1FC-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -141,12 +146,12 @@ BANK10 520-56F 1
 BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
-COMMON 79-7D 1
+COMMON 7D-7D 1
 EEDATA F000-F07F 2
-STRCODE 4-6F4 2
-STRCODE 816-1FFF 2
-STRING 4-6F4 2
-STRING 816-1FFF 2
+STRCODE 2-3 2
+STRCODE 1FC-1FFF 2
+STRING 2-3 2
+STRING 1FC-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -161,117 +166,146 @@ STRING 816-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\R3C_PIC16F18015.X.production.o
-7FD cinit CODE >1445:C:\Users\Nono\AppData\Local\Temp\xcAs3q0.s
-7FD cinit CODE >1448:C:\Users\Nono\AppData\Local\Temp\xcAs3q0.s
-7FD cinit CODE >1454:C:\Users\Nono\AppData\Local\Temp\xcAs3q0.s
-7FD cinit CODE >1456:C:\Users\Nono\AppData\Local\Temp\xcAs3q0.s
-7FE cinit CODE >1457:C:\Users\Nono\AppData\Local\Temp\xcAs3q0.s
-72F text14 CODE >7:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-72F text14 CODE >9:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-731 text14 CODE >10:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-733 text14 CODE >11:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-735 text14 CODE >12:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-736 text14 CODE >13:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-737 text14 CODE >14:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-73B text14 CODE >15:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
-719 text13 CODE >32:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-71A text13 CODE >33:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-71F text13 CODE >34:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-722 text13 CODE >35:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-77E text12 CODE >42:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-77E text12 CODE >43:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-77F text12 CODE >44:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-780 text12 CODE >45:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-788 text12 CODE >45:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-78F text12 CODE >46:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-793 text12 CODE >44:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-79B text12 CODE >44:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-7A3 text12 CODE >48:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-74F text11 CODE >6:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-74F text11 CODE >8:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-751 text11 CODE >10:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-752 text11 CODE >12:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-753 text11 CODE >14:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-754 text11 CODE >16:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-755 text11 CODE >18:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-756 text11 CODE >20:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-758 text11 CODE >21:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-759 text11 CODE >23:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-75C text11 CODE >25:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-75F text11 CODE >27:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-761 text11 CODE >29:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-762 text11 CODE >30:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
-723 text10 CODE >41:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-723 text10 CODE >42:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-72E text10 CODE >43:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-73C text9 CODE >65:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-73C text9 CODE >67:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-73F text9 CODE >68:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-741 text9 CODE >69:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-744 text9 CODE >70:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-747 text9 CODE >71:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-74A text9 CODE >72:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-74C text9 CODE >73:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-74D text9 CODE >74:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-74E text9 CODE >75:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6F6 text8 CODE >45:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6F6 text8 CODE >46:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6F9 text8 CODE >47:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6FB text8 CODE >48:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6FC text7 CODE >55:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6FC text7 CODE >56:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6FF text7 CODE >57:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-701 text7 CODE >58:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-708 text6 CODE >60:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-709 text6 CODE >61:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-70C text6 CODE >62:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-70F text6 CODE >63:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7CF text5 CODE >86:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7D0 text5 CODE >87:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7D3 text5 CODE >88:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7D6 text5 CODE >89:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7DB text5 CODE >90:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7DE text5 CODE >91:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7E8 text5 CODE >92:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7F1 text5 CODE >92:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7F5 text5 CODE >92:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7F9 text5 CODE >93:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-7FC text5 CODE >95:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-710 text4 CODE >126:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-710 text4 CODE >128:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-718 text4 CODE >129:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-763 text3 CODE >15:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-763 text3 CODE >18:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-763 text3 CODE >20:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-765 text3 CODE >21:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-766 text3 CODE >22:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-768 text3 CODE >23:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-769 text3 CODE >24:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-76C text3 CODE >25:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-76E text3 CODE >26:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-771 text3 CODE >27:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-773 text3 CODE >29:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-775 text3 CODE >31:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-779 text3 CODE >33:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-77A text3 CODE >35:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-77C text3 CODE >37:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-77D text3 CODE >39:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/i2c_driver.h
-6F5 text2 CODE >3:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
-6F5 text2 CODE >10:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
-702 text1 CODE >4:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
-702 text1 CODE >7:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
-707 text1 CODE >8:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
-7A4 maintext CODE >68:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7A4 maintext CODE >70:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7A6 maintext CODE >72:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7A8 maintext CODE >75:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7AB maintext CODE >78:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7AE maintext CODE >81:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7B1 maintext CODE >84:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7B4 maintext CODE >105:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7BB maintext CODE >118:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7BE maintext CODE >119:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
-7C1 maintext CODE >120:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+2D cinit CODE >1560:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+2D cinit CODE >1563:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+2D cinit CODE >1593:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+2E cinit CODE >1597:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+2F cinit CODE >1598:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+30 cinit CODE >1599:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+31 cinit CODE >1600:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+32 cinit CODE >1601:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+33 cinit CODE >1602:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+36 cinit CODE >1608:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+36 cinit CODE >1610:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+37 cinit CODE >1611:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+38 cinit CODE >1612:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+4 intentry CODE >71:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+6 intentry CODE >73:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+B intentry CODE >76:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+D intentry CODE >76:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+11 intentry CODE >77:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+18 intentry CODE >78:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+1C intentry CODE >81:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+21 intentry CODE >83:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+22 intentry CODE >84:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+23 intentry CODE >86:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+23 intentry CODE >87:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+27 intentry CODE >89:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+28 intentry CODE >90:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+29 intentry CODE >96:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+1A1 text10 CODE >7:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+1A1 text10 CODE >9:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+1A3 text10 CODE >10:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+1A5 text10 CODE >11:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+1A7 text10 CODE >12:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+1A8 text10 CODE >13:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+1A9 text10 CODE >14:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+1AD text10 CODE >15:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/analog_driver.h
+180 text9 CODE >6:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+180 text9 CODE >8:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+182 text9 CODE >10:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+183 text9 CODE >12:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+184 text9 CODE >14:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+185 text9 CODE >16:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+186 text9 CODE >18:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+187 text9 CODE >20:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+189 text9 CODE >21:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+18A text9 CODE >23:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+18D text9 CODE >25:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+190 text9 CODE >27:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+192 text9 CODE >29:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+193 text9 CODE >30:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+1D0 text8 CODE >32:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+1D1 text8 CODE >33:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+1D6 text8 CODE >34:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+1D9 text8 CODE >35:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+11B text7 CODE >42:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+11B text7 CODE >43:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+11C text7 CODE >44:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+11D text7 CODE >45:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+125 text7 CODE >45:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+12C text7 CODE >46:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+130 text7 CODE >44:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+138 text7 CODE >44:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+140 text7 CODE >48:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+16C text6 CODE >53:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+16C text6 CODE >54:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+173 text6 CODE >55:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+177 text6 CODE >56:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+17F text6 CODE >57:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+157 text5 CODE >59:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+158 text5 CODE >60:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+15A text5 CODE >61:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+161 text5 CODE >62:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+167 text5 CODE >62:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+16B text5 CODE >63:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/eusart_driver.h
+3A text4 CODE >22:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+3A text4 CODE >24:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+40 text4 CODE >25:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+41 text4 CODE >28:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+42 text4 CODE >29:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+44 text4 CODE >28:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+49 text4 CODE >31:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+4B text4 CODE >32:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+4C text4 CODE >34:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+4E text4 CODE >36:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+56 text4 CODE >37:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+5A text4 CODE >40:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+5F text4 CODE >40:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+65 text4 CODE >40:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+69 text4 CODE >40:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+6D text4 CODE >41:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+71 text4 CODE >43:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+73 text4 CODE >44:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+75 text4 CODE >46:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+7D text4 CODE >46:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+88 text4 CODE >46:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+8C text4 CODE >47:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+8E text4 CODE >49:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+95 text4 CODE >49:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+99 text4 CODE >50:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+9A text4 CODE >51:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+9B text3 CODE >8:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+9B text3 CODE >10:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+A2 text3 CODE >12:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+B1 text3 CODE >12:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+B5 text3 CODE >13:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+BD text3 CODE >17:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+CA text3 CODE >16:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+D9 text3 CODE >16:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+DD text3 CODE >19:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+E4 text3 CODE >20:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/lora_driver.h
+1F9 text2 CODE >10:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
+1F9 text2 CODE >12:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
+1FA text2 CODE >14:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
+1FB text2 CODE >15:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
+1F0 text1 CODE >4:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
+1F0 text1 CODE >7:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
+1F5 text1 CODE >8:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X/watchdog_driver.h
+E5 maintext CODE >99:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+E5 maintext CODE >101:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+E6 maintext CODE >102:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+E7 maintext CODE >105:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+E9 maintext CODE >107:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+EB maintext CODE >113:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+EE maintext CODE >114:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+F4 maintext CODE >117:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+F7 maintext CODE >120:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+F9 maintext CODE >121:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+106 maintext CODE >122:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+109 maintext CODE >123:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+10B maintext CODE >126:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+10E maintext CODE >129:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+10E maintext CODE >141:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+111 maintext CODE >166:C:\Users\Nono\MPLABXProjects\R3C_PIC16F18015.X\main.c
+1EA clrtext CODE >1582:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+1EA clrtext CODE >1583:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+1EB clrtext CODE >1584:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+1EB clrtext CODE >1585:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+1EC clrtext CODE >1586:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+1ED clrtext CODE >1587:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+1EE clrtext CODE >1588:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
+1EF clrtext CODE >1589:C:\Users\Nono\AppData\Local\Temp\xcAsjjc.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -285,74 +319,65 @@ $dist/default/production\R3C_PIC16F18015.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-__Hspace_0 816 0 ABS 0 - -
-__Hspace_1 79 0 ABS 0 - -
+__Hspace_0 1FC 0 ABS 0 - -
+__Hspace_1 F0 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10013 0 ABS 0 - -
 _SSP1STATbits 68F 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-EUSART_print@c 76 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
+EUSART_print@c 77 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-__end_of_I2C_setup EFC 0 CODE 0 text3 dist/default/production\R3C_PIC16F18015.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-__end_of_I2C_start DF8 0 CODE 0 text8 dist/default/production\R3C_PIC16F18015.X.production.o
-_main F48 0 CODE 0 maintext dist/default/production\R3C_PIC16F18015.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+_main 1CA 0 CODE 0 maintext dist/default/production\R3C_PIC16F18015.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_I2C_write E20 0 CODE 0 text6 dist/default/production\R3C_PIC16F18015.X.production.o
-start 4 0 CODE 0 init C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-_EUSART_print EFC 0 CODE 0 text12 dist/default/production\R3C_PIC16F18015.X.production.o
-_EUSART_setup E9E 0 CODE 0 text11 dist/default/production\R3C_PIC16F18015.X.production.o
-_EUSART_write E32 0 CODE 0 text13 dist/default/production\R3C_PIC16F18015.X.production.o
+start 56 0 CODE 0 init C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+_EUSART_print 236 0 CODE 0 text7 dist/default/production\R3C_PIC16F18015.X.production.o
+_EUSART_setup 300 0 CODE 0 text9 dist/default/production\R3C_PIC16F18015.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+_EUSART_write 3A0 0 CODE 0 text8 dist/default/production\R3C_PIC16F18015.X.production.o
 _RC2STAbits 61A 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
+EUSART_clear_buffer@buffer 73 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-_I2C_setup EC6 0 CODE 0 text3 dist/default/production\R3C_PIC16F18015.X.production.o
-_I2C_start DEC 0 CODE 0 text8 dist/default/production\R3C_PIC16F18015.X.production.o
-_I2C_write E10 0 CODE 0 text6 dist/default/production\R3C_PIC16F18015.X.production.o
-I2C_read@tmp 70 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-_I2C_read_query F9E 0 CODE 0 text5 dist/default/production\R3C_PIC16F18015.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
 _WDTCONbits 18C 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_I2C_MCP23008_read E32 0 CODE 0 text4 dist/default/production\R3C_PIC16F18015.X.production.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+_AT_command 2D8 0 CODE 0 text6 dist/default/production\R3C_PIC16F18015.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-__end_of_WDT_setup E10 0 CODE 0 text1 dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_WDT_setup 3EC 0 CODE 0 text1 dist/default/production\R3C_PIC16F18015.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELA 1E8C 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-_WDT_setup E04 0 CODE 0 text1 dist/default/production\R3C_PIC16F18015.X.production.o
-_I2C_read E78 0 CODE 0 text9 dist/default/production\R3C_PIC16F18015.X.production.o
-_I2C_stop DF8 0 CODE 0 text7 dist/default/production\R3C_PIC16F18015.X.production.o
-_I2C_wait E46 0 CODE 0 text10 dist/default/production\R3C_PIC16F18015.X.production.o
-I2C_write@data 70 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_EUSART_print F48 0 CODE 0 text12 dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_EUSART_setup EC6 0 CODE 0 text11 dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_EUSART_write E46 0 CODE 0 text13 dist/default/production\R3C_PIC16F18015.X.production.o
+AT_command_check@i 7B 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
+_RX_index 7C 0 COMMON 1 bssCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
+_WDT_setup 3E0 0 CODE 0 text1 dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_EUSART_print 282 0 CODE 0 text7 dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_EUSART_setup 328 0 CODE 0 text9 dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_EUSART_write 3B4 0 CODE 0 text8 dist/default/production\R3C_PIC16F18015.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_I2C_read E9E 0 CODE 0 text9 dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_I2C_stop E04 0 CODE 0 text7 dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_I2C_wait E5E 0 CODE 0 text10 dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_I2C_read_query FFA 0 CODE 0 text5 dist/default/production\R3C_PIC16F18015.X.production.o
-I2C_read_query@i 74 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-I2C_MCP23008_read@rx_data 20 0 BANK0 1 cstackBANK0 dist/default/production\R3C_PIC16F18015.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-___stacklo 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-I2C_read_query@address 76 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-start_initialization FFA 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
-_I2C_MCP23008_read E20 0 CODE 0 text4 dist/default/production\R3C_PIC16F18015.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+___stacklo 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+__end_of_AT_command 300 0 CODE 0 text6 dist/default/production\R3C_PIC16F18015.X.production.o
+EUSART_clear_buffer@i 74 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
+start_initialization 5A 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
+EUSART_clear_buffer@size 71 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
 _TRISAbits 12 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _RA1PPS 1D8D 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _RA2PPS 1D8E 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _RA5PPS 1D91 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _RC2REG 616 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
+AT_command_check@at_command 20 0 BANK0 1 cstackBANK0 dist/default/production\R3C_PIC16F18015.X.production.o
 _RX2PPS 1E43 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
+clear_ram0 3D4 0 CODE 0 clrtext dist/default/production\R3C_PIC16F18015.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\R3C_PIC16F18015.X.production.o
 _TX2REG 617 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
+__end_of_SLEEP_start 3F8 0 CODE 0 text2 dist/default/production\R3C_PIC16F18015.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -363,7 +388,7 @@ __Hbank6 0 0 ABS 0 bank6 -
 __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
-__Hcinit 1000 0 CODE 0 cinit -
+__Hcinit 74 0 CODE 0 cinit -
 __Hidloc 10008 0 IDLOC 5 idloc -
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
@@ -420,6 +445,7 @@ __Hsfr61 0 0 ABS 0 sfr61 -
 __Hsfr62 0 0 ABS 0 sfr62 -
 __Hsfr63 0 0 ABS 0 sfr63 -
 __Hstack 0 0 STACK 2 stack -
+AT_command_check@expected_response 22 0 BANK0 1 cstackBANK0 dist/default/production\R3C_PIC16F18015.X.production.o
 __Hbank10 0 0 ABS 0 bank10 -
 __Hbank11 0 0 ABS 0 bank11 -
 __Hbank12 0 0 ABS 0 bank12 -
@@ -488,7 +514,7 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
-__Lcinit FFA 0 CODE 0 cinit -
+__Lcinit 5A 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -545,10 +571,11 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
+_INTCONbits B 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hheap 0 0 HEAP 7 heap -
-__Hinit 4 0 CODE 0 init -
+__Hinit 56 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -563,7 +590,7 @@ __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
 __Lheap 0 0 HEAP 7 heap -
-__Linit 4 0 CODE 0 init -
+__Linit 56 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -575,26 +602,41 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 1000 0 STRCODE 0 stringtext1 dist/default/production\R3C_PIC16F18015.X.production.o
-__pstringtext2 0 0 STRCODE 0 stringtext2 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext1 282 0 STRCODE 0 stringtext1 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext2 328 0 STRCODE 0 stringtext2 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext3 35C 0 STRCODE 0 stringtext3 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext4 374 0 STRCODE 0 stringtext4 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext5 38A 0 STRCODE 0 stringtext5 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext6 3B4 0 STRCODE 0 stringtext6 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext7 3C4 0 STRCODE 0 stringtext7 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext8 3EC 0 STRCODE 0 stringtext8 dist/default/production\R3C_PIC16F18015.X.production.o
+__pstringtext9 0 0 STRCODE 0 stringtext9 dist/default/production\R3C_PIC16F18015.X.production.o
 _SSP1CON2 691 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _SSP1STAT 68F 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+int$flags 7E 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 816 0 ABS 0 - -
-__S1 79 0 ABS 0 - -
+AT_command_check@response_size 24 0 BANK0 1 cstackBANK0 dist/default/production\R3C_PIC16F18015.X.production.o
+_ISR 8 0 CODE 0 intentry dist/default/production\R3C_PIC16F18015.X.production.o
+__S0 1FC 0 ABS 0 - -
+__S1 F0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-I2C_read_query@data 71 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-__Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
+__end_of_ISR 56 0 CODE 0 intentry dist/default/production\R3C_PIC16F18015.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
-_Analog_setup E5E 0 CODE 0 text14 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext10 E46 0 CODE 0 text10 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext11 E9E 0 CODE 0 text11 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext12 EFC 0 CODE 0 text12 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext13 E32 0 CODE 0 text13 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext14 E5E 0 CODE 0 text14 dist/default/production\R3C_PIC16F18015.X.production.o
+__Lstringtext3 0 0 ABS 0 stringtext3 -
+__Lstringtext4 0 0 ABS 0 stringtext4 -
+__Lstringtext5 0 0 ABS 0 stringtext5 -
+__Lstringtext6 0 0 ABS 0 stringtext6 -
+__Lstringtext7 0 0 ABS 0 stringtext7 -
+__Lstringtext8 0 0 ABS 0 stringtext8 -
+__Lstringtext9 0 0 ABS 0 stringtext9 -
+_Analog_setup 342 0 CODE 0 text10 dist/default/production\R3C_PIC16F18015.X.production.o
+_PIE3bits 99 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext10 342 0 CODE 0 text10 dist/default/production\R3C_PIC16F18015.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -649,11 +691,13 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext F48 0 CODE 0 maintext dist/default/production\R3C_PIC16F18015.X.production.o
+__pmaintext 1CA 0 CODE 0 maintext dist/default/production\R3C_PIC16F18015.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
+_EUSART_clear_buffer 2AE 0 CODE 0 text5 dist/default/production\R3C_PIC16F18015.X.production.o
 _TX2STAbits 61B 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
+_AT_command_check 74 0 CODE 0 text4 dist/default/production\R3C_PIC16F18015.X.production.o
 _BAUD2CONbits 61C 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _SSP1CLKPPS 1E47 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _SSP1DATPPS 1E48 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
@@ -663,56 +707,72 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
+__pbssCOMMON 7C 0 COMMON 1 bssCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR3bits 8F 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-__Lend_init 4 0 CODE 0 end_init -
+__Lend_init 56 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-EUSART_print@string 71 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-end_of_initialization FFA 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
-__Hintentry 4 0 CODE 0 intentry -
+EUSART_print@string 72 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
+_RX_buffer A0 0 BANK1 1 bssBANK1 dist/default/production\R3C_PIC16F18015.X.production.o
+end_of_initialization 6C 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
+__Hintentry 56 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
-__end_of_Analog_setup E78 0 CODE 0 text14 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext1 E04 0 CODE 0 text1 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext2 DEA 0 CODE 0 text2 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext3 EC6 0 CODE 0 text3 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext4 E20 0 CODE 0 text4 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext5 F9E 0 CODE 0 text5 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext6 E10 0 CODE 0 text6 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext7 DF8 0 CODE 0 text7 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext8 DEC 0 CODE 0 text8 dist/default/production\R3C_PIC16F18015.X.production.o
-__ptext9 E78 0 CODE 0 text9 dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_Analog_setup 35C 0 CODE 0 text10 dist/default/production\R3C_PIC16F18015.X.production.o
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__ptext1 3E0 0 CODE 0 text1 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext2 3F2 0 CODE 0 text2 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext3 136 0 CODE 0 text3 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext4 74 0 CODE 0 text4 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext5 2AE 0 CODE 0 text5 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext6 2D8 0 CODE 0 text6 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext7 236 0 CODE 0 text7 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext8 3A0 0 CODE 0 text8 dist/default/production\R3C_PIC16F18015.X.production.o
+__ptext9 300 0 CODE 0 text9 dist/default/production\R3C_PIC16F18015.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
-___heap_hi 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-___heap_lo 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAs3q0.o
-__end_of__initialization FFA 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
+__Hstringtext3 0 0 ABS 0 stringtext3 -
+__Hstringtext4 0 0 ABS 0 stringtext4 -
+__Hstringtext5 0 0 ABS 0 stringtext5 -
+__Hstringtext6 0 0 ABS 0 stringtext6 -
+__Hstringtext7 0 0 ABS 0 stringtext7 -
+__Hstringtext8 0 0 ABS 0 stringtext8 -
+__Hstringtext9 0 0 ABS 0 stringtext9 -
+___heap_hi 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+___heap_lo 0 0 ABS 0 - C:\Users\Nono\AppData\Local\Temp\xcAsjjc.o
+__end_of__initialization 6C 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_AT_command_check 136 0 CODE 0 text4 dist/default/production\R3C_PIC16F18015.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
+AT_command@at_command 78 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
 _SP2BRGH 619 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _SP2BRGL 618 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-_LoRa_setup DEA 0 CODE 0 text2 dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_EUSART_clear_buffer 2D8 0 CODE 0 text5 dist/default/production\R3C_PIC16F18015.X.production.o
+_LoRa_setup 136 0 CODE 0 text3 dist/default/production\R3C_PIC16F18015.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 690 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _SSP1CON2bits 691 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
 _SSP1ADD 68D 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _SSP1BUF 68C 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
-__Hend_init 8 0 CODE 0 end_init -
-__end_of_main F9E 0 CODE 0 maintext dist/default/production\R3C_PIC16F18015.X.production.o
+__Hend_init 5A 0 CODE 0 end_init -
+__end_of_main 236 0 CODE 0 maintext dist/default/production\R3C_PIC16F18015.X.production.o
 _ADPCH 1D1F 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _ADREF 1D2B 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _ADRES 1D1D 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _ODCONAbits 1E8E 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
+_PORTA C 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 _TRISA 12 0 ABS 0 - dist/default/production\R3C_PIC16F18015.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__initialization FFA 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
-EUSART_write@txData 70 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-I2C_read_query@number_of_bytes 72 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
-__end_of_LoRa_setup DEC 0 CODE 0 text2 dist/default/production\R3C_PIC16F18015.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production\R3C_PIC16F18015.X.production.o
+__initialization 5A 0 CODE 0 cinit dist/default/production\R3C_PIC16F18015.X.production.o
+EUSART_write@txData 71 0 COMMON 1 cstackCOMMON dist/default/production\R3C_PIC16F18015.X.production.o
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\R3C_PIC16F18015.X.production.o
+_SLEEP_start 3F2 0 CODE 0 text2 dist/default/production\R3C_PIC16F18015.X.production.o
+__end_of_LoRa_setup 1CA 0 CODE 0 text3 dist/default/production\R3C_PIC16F18015.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -738,26 +798,21 @@ __end_of_LoRa_setup DEC 0 CODE 0 text2 dist/default/production\R3C_PIC16F18015.X
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7FD FFA 3 2
-text1 0 702 E04 6 2
-text2 0 6F5 DEA 1 2
-text3 0 763 EC6 1B 2
-text4 0 710 E20 9 2
-text5 0 7CF F9E 2E 2
-text6 0 708 E10 8 2
-text7 0 6FC DF8 6 2
-text8 0 6F6 DEC 6 2
-text9 0 73C E78 13 2
-text10 0 723 E46 C 2
-text11 0 74F E9E 14 2
-text12 0 77E EFC 26 2
-text13 0 719 E32 A 2
-text14 0 72F E5E D 2
-maintext 0 7A4 F48 2B 2
-cstackCOMMON 1 70 70 9 1
-cstackBANK0 1 20 20 B 1
-stringtext1 0 800 1000 16 2
-reset_vec 0 0 0 4 2
+text2 0 1F9 3F2 3 2
+text5 0 157 2AE 3D 2
+text8 0 1D0 3A0 A 2
+text10 0 1A1 342 D 2
+cstackCOMMON 1 70 70 D 1
+cstackBANK0 1 20 20 9 1
+stringtext1 0 141 282 16 2
+stringtext2 0 194 328 D 2
+stringtext3 0 1AE 35C 22 2
+stringtext6 0 1DA 3B4 10 2
+stringtext8 0 1F6 3EC 3 2
+intentry 0 4 8 13D 2
+reset_vec 0 0 0 2 2
+bssBANK1 1 A0 A0 50 1
+clrtext 0 1EA 3D4 C 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

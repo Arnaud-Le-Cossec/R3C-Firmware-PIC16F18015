@@ -35,7 +35,7 @@ void EUSART_write(uint8_t txData){
 }
 
 uint8_t EUSART_read_wait(void){
-    while(!PIR3bits.RC2IF); // wait
+    while(PIR3bits.RC2IF==0); // wait
     return RC2REG;
 }
 
@@ -54,4 +54,10 @@ void EUSART_print_num(uint8_t number){
     EUSART_write(c+48);
     EUSART_write(d+48);
     EUSART_write(u+48);
+}
+
+void EUSART_clear_buffer(uint8_t *buffer, uint8_t size){
+    for(uint8_t i=0; i<size; i++){
+        buffer[i] = 0;
+    }
 }

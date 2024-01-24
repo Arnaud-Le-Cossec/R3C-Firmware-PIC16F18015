@@ -10969,6 +10969,11 @@ extern __bank0 __bit __timeout;
 
 
 
+
+uint8_t RX_buffer[80];
+uint8_t RX_index = 0;
+
+
 # 1 "./watchdog_driver.h" 1
 void WDT_setup(void);
 void SLEEP_start(void);
@@ -10985,7 +10990,7 @@ void SLEEP_start(void){
 
     __asm("SLEEP");
 }
-# 55 "main.c" 2
+# 59 "main.c" 2
 
 # 1 "./eusart_driver.h" 1
 void EUSART_setup(void);
@@ -11025,7 +11030,7 @@ void EUSART_write(uint8_t txData){
 }
 
 uint8_t EUSART_read_wait(void){
-    while(!PIR3bits.RC2IF);
+    while(PIR3bits.RC2IF==0);
     return RC2REG;
 }
 
@@ -11045,7 +11050,13 @@ void EUSART_print_num(uint8_t number){
     EUSART_write(d+48);
     EUSART_write(u+48);
 }
-# 56 "main.c" 2
+
+void EUSART_clear_buffer(uint8_t *buffer, uint8_t size){
+    for(uint8_t i=0; i<size; i++){
+        buffer[i] = 0;
+    }
+}
+# 60 "main.c" 2
 
 # 1 "./i2c_driver.h" 1
 void I2C_setup(void);
@@ -11177,7 +11188,7 @@ void I2C_MCP23008_read(void){
     uint8_t rx_data[11];
     I2C_read_query(0x27, rx_data, 11);
 }
-# 57 "main.c" 2
+# 61 "main.c" 2
 
 # 1 "./analog_driver.h" 1
 
@@ -11209,35 +11220,128 @@ uint16_t Analog_read_voltage(void){
     uint16_t r = a*(330.0/1023.0);
     return ADRES;
 }
-# 58 "main.c" 2
+# 62 "main.c" 2
 
 # 1 "./lora_driver.h" 1
+
+
 void LoRa_setup(void);
+uint8_t AT_command_check(const char * at_command, const char * expected_response, uint8_t response_size);
+void AT_command(const char * at_command);
+
 
 void LoRa_setup(void){
 
+    AT_command("Wake up !!");
+
+    if(!AT_command_check("AT", "+AT: OK", 7)){
+        EUSART_print("RX/TX Fail");
+    }
+
+    while(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
+        _delay((unsigned long)((20000)*(1000000/4000.0)));
+    };
+    EUSART_print("Connected !");
+}
+
+uint8_t AT_command_check(const char * at_command, const char * expected_response, uint8_t response_size){
+
+    EUSART_clear_buffer(RX_buffer, 80);
+    RX_index = 0;
+
+    uint8_t tmp;
+    while(PIR3bits.RC2IF){
+        tmp = RC2REG;
+    }
+    RC2STAbits.CREN = 0;
+    RC2STAbits.CREN = 1;
+
+    PIE3bits.RC2IE = 1;
+
+    EUSART_print(at_command);
+    EUSART_write(0x0A);
+
+
+    while(RX_index < response_size+2);
+    _delay((unsigned long)((5)*(1000000/4000.0)));
+
+    PIE3bits.RC2IE = 0;
+    for(uint8_t i=0; i<response_size; i++){
+
+        if(RX_buffer[i] != expected_response[i]){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void AT_command(const char * at_command){
+    EUSART_print(at_command);
+    EUSART_write(0x0A);
+    _delay((unsigned long)((20)*(1000000/4000.0)));
+}
+# 63 "main.c" 2
 
 
 
 
+
+
+
+
+void __attribute__((picinterrupt(("")))) ISR(void){
+
+    if(PIR3bits.RC2IF){
+
+
+            if(RX_index < 80){
+                RX_buffer[RX_index] = RC2REG;
+                RX_index ++;
+            }
+
+        if(RC2STAbits.FERR){
+
+            RC2STAbits.SPEN = 0;
+            RC2STAbits.SPEN = 1;
+
+        }
+        if(RC2STAbits.OERR){
+
+            RC2STAbits.CREN = 0;
+            RC2STAbits.CREN = 1;
+        }
+
+
+    }
 
 }
-# 59 "main.c" 2
-# 68 "main.c"
+
+
 void main(void) {
 
-    TRISA &= !(1<<4);
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+
+    TRISA &= !(1<<2);
 
     ANSELA = 0x0;
 
 
-    I2C_setup();
+
 
 
     EUSART_setup();
+    EUSART_clear_buffer(RX_buffer, 80);
 
 
     Analog_setup();
+
+
+    PORTA |= (1<<2);
+    _delay((unsigned long)((1000)*(1000000/4000.0)));
+    LoRa_setup();
+    PORTA &= !(1<<2);
 
 
     WDT_setup();
@@ -11250,13 +11354,16 @@ void main(void) {
     float temp;
     float humidity;
 
+
+
     while(1){
-# 105 "main.c"
-        EUSART_print("Hello ! I am a PIC ! ");
-# 118 "main.c"
-        I2C_MCP23008_read();
-        LoRa_setup();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
+
+
+        SLEEP_start();
+# 166 "main.c"
+        AT_command("AT+MSG=hello");
+
+
     }
     return;
 }
