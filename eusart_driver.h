@@ -1,7 +1,9 @@
 void EUSART_setup(void);
 void EUSART_write(uint8_t txData);
 void EUSART_print(const char* string);
-void EUSART_print_num(uint8_t number);
+void EUSART_print_dec(uint8_t number);
+void EUSART_print_hex(uint8_t number);
+void EUSART_clear_buffer(uint8_t *buffer, uint8_t size);
 
 void EUSART_setup(void){
     /* 16-bit Baud Rate Generator is used */
@@ -47,7 +49,7 @@ void EUSART_print(const char* string){
     }
 }
 
-void EUSART_print_num(uint8_t number){
+void EUSART_print_dec(uint8_t number){
     uint8_t c = (number/100);
     uint8_t d = (number/10)%10;
     uint8_t u = (number)%10;
@@ -56,8 +58,17 @@ void EUSART_print_num(uint8_t number){
     EUSART_write(u+48);
 }
 
+void EUSART_print_hex(uint8_t number){
+    const char ref[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+    uint8_t a = (number >> 4)&0b00001111;
+    EUSART_write(ref[a]);
+    a = number & 0b00001111;
+    EUSART_write(ref[a]);
+}
+
 void EUSART_clear_buffer(uint8_t *buffer, uint8_t size){
     for(uint8_t i=0; i<size; i++){
         buffer[i] = 0;
     }
 }
+

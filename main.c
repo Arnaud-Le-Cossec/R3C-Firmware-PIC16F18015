@@ -64,7 +64,7 @@ uint8_t RX_index = 0;
 
 #define LED_PIN 2
 
-#define SLEEP_COUNTER_THRESHOLD_DEFAULT 14
+#define SLEEP_COUNTER_THRESHOLD_DEFAULT 1//14
 
 
 
@@ -128,42 +128,41 @@ void main(void) {
     /*Declare sleep counter*/
     uint8_t sleep_counter = 0;
     
-    
-    
     float temp;
     float humidity;
-    
-    
+    uint8_t battery;
     
     while(1){
            
         /*Start sleep, will be awaken by watchdog*/
+        AT_command("AT+LOWPOWER");
         SLEEP_start();
         
         /*increment sleep counter*/
-        //sleep_counter++;
+        sleep_counter++;
         
-        //if(sleep_counter >= SLEEP_COUNTER_THRESHOLD_DEFAULT){
+        if(sleep_counter >= SLEEP_COUNTER_THRESHOLD_DEFAULT){
             /*Sleep*/
-        //    sleep_counter = 0;
-        //EUSART_print("Hello ! I am a PIC ! ");
+            sleep_counter = 0;
             
-        //}
+            AT_command("Wake up !!");
+            /*Test Gateway connection*/
+            if(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
+                /*Test fail, reconnect to LoRa*/
+                LoRa_setup();
+            }
             
-        //uint16_t a = Analog_read();
-        //uint8_t r = a*(100.0/1023.0);  
-        //EUSART_print_num(r);
+            /*Measure sensors*/
+            //I2C_SHT4x_read(&temp, &humidity);
+            battery = Analog_read_percent();
+            
+            /*Send message*/
+            LoRa_send_data(0x2525, 0x2323, battery);
+            
+        }
         
-        //EUSART_print_num(sleep_counter);
-        //blink led for debugging
-
-        //I2C_SHT4x_read(&temp, &humidity);
-        //I2C_PCF8574_write();
         //I2C_MCP23008_read();
         
-        
-        //AT_command_check("AT", "AT", 2)?(PORTA |= (1<<LED_PIN)):(PORTA &= !(1<<LED_PIN));
-        AT_command("AT+MSG=hello");
         //PORTA ^= (1<<LED_PIN);
         //__delay_ms(10000);
     }

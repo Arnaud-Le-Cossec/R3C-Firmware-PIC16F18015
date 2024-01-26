@@ -19,6 +19,21 @@ void LoRa_setup(void){
     EUSART_print("Connected !");
 }
 
+void LoRa_send_data(uint16_t temperature, uint16_t humidity, uint8_t battery){
+    EUSART_print("AT+MSGHEX=");
+    /*temperature (big endian)*/
+    EUSART_print_hex(temperature&0xFF);
+    EUSART_print_hex((temperature >> 8)&0xFF);
+    /*humidity (big endian)*/
+    EUSART_print_hex(humidity&0xFF);
+    EUSART_print_hex((humidity >> 8)&0xFF);
+    /*battery*/
+    EUSART_print_hex(battery);
+    /*End command*/
+    EUSART_write(0x0A); // Line feed
+    __delay_ms(20);
+}
+
 uint8_t AT_command_check(const char * at_command, const char * expected_response, uint8_t response_size){
     /*Clear buffer*/
     EUSART_clear_buffer(RX_buffer, RX_BUFFER_SIZE);

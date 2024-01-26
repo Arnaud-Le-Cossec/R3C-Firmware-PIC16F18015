@@ -10996,7 +10996,9 @@ void SLEEP_start(void){
 void EUSART_setup(void);
 void EUSART_write(uint8_t txData);
 void EUSART_print(const char* string);
-void EUSART_print_num(uint8_t number);
+void EUSART_print_dec(uint8_t number);
+void EUSART_print_hex(uint8_t number);
+void EUSART_clear_buffer(uint8_t *buffer, uint8_t size);
 
 void EUSART_setup(void){
 
@@ -11042,13 +11044,21 @@ void EUSART_print(const char* string){
     }
 }
 
-void EUSART_print_num(uint8_t number){
+void EUSART_print_dec(uint8_t number){
     uint8_t c = (number/100);
     uint8_t d = (number/10)%10;
     uint8_t u = (number)%10;
     EUSART_write(c+48);
     EUSART_write(d+48);
     EUSART_write(u+48);
+}
+
+void EUSART_print_hex(uint8_t number){
+    const char ref[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+    uint8_t a = (number >> 4)&0b00001111;
+    EUSART_write(ref[a]);
+    a = number & 0b00001111;
+    EUSART_write(ref[a]);
 }
 
 void EUSART_clear_buffer(uint8_t *buffer, uint8_t size){
@@ -11216,9 +11226,15 @@ uint16_t Analog_read_raw(void){
 }
 
 uint16_t Analog_read_voltage(void){
-    uint16_t a = Analog_read();
+    uint16_t a = Analog_read_raw();
     uint16_t r = a*(330.0/1023.0);
-    return ADRES;
+    return r;
+}
+
+uint8_t Analog_read_percent(void){
+    uint16_t a = Analog_read_raw();
+    uint8_t r = a*(100.0/1023.0);
+    return r;
 }
 # 62 "main.c" 2
 
@@ -11242,6 +11258,21 @@ void LoRa_setup(void){
         _delay((unsigned long)((20000)*(1000000/4000.0)));
     };
     EUSART_print("Connected !");
+}
+
+void LoRa_send_data(uint16_t temperature, uint16_t humidity, uint8_t battery){
+    EUSART_print("AT+MSGHEX=");
+
+    EUSART_print_hex(temperature&0xFF);
+    EUSART_print_hex((temperature >> 8)&0xFF);
+
+    EUSART_print_hex(humidity&0xFF);
+    EUSART_print_hex((humidity >> 8)&0xFF);
+
+    EUSART_print_hex(battery);
+
+    EUSART_write(0x0A);
+    _delay((unsigned long)((20)*(1000000/4000.0)));
 }
 
 uint8_t AT_command_check(const char * at_command, const char * expected_response, uint8_t response_size){
@@ -11349,19 +11380,47 @@ void main(void) {
 
     uint8_t sleep_counter = 0;
 
-
-
     float temp;
     float humidity;
+    uint8_t battery;
+
+
+
+
 
 
 
     while(1){
 
 
+        AT_command("AT+LOWPOWER");
         SLEEP_start();
-# 166 "main.c"
-        AT_command("AT+MSG=hello");
+
+
+        sleep_counter++;
+
+        if(sleep_counter >= 1){
+
+            sleep_counter = 0;
+
+            AT_command("Wake up !!");
+
+            if(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
+
+                LoRa_setup();
+            }
+
+
+
+            battery = Analog_read_percent();
+
+
+            LoRa_send_data(0x2525, 0x2323, battery);
+
+        }
+
+
+
 
 
     }

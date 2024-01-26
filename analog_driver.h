@@ -23,7 +23,13 @@ uint16_t Analog_read_raw(void){
 }
 
 uint16_t Analog_read_voltage(void){
-    uint16_t a = Analog_read();
+    uint16_t a = Analog_read_raw();
     uint16_t r = a*(BATT_MAX_VOLTAGE_MV/1023.0);  
-    return ADRES;                   // Return result (mV)
+    return r;                       // Return result (mV)
+}
+
+uint8_t Analog_read_percent(void){
+    uint16_t a = Analog_read_raw();
+    uint8_t r = a*(100.0/1023.0);  
+    return r;                       // Return result (%)
 }
