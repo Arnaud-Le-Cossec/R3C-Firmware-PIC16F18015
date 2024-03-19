@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Wed Jan 24 17:55:20 2024
+                                                                                               Thu Mar 14 14:48:49 2024
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	16F18015
@@ -1334,7 +1334,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1315     034A  01CE               	clrf	main@sleep_counter
   1316     034B                     l1947:
   1317                           
-  1318                           ;main.c: 144:         AT_command("AT+LOWPOWER");
+  1318                           ;main.c: 138:         AT_command("AT+LOWPOWER");
   1319     034B  30FB               	movlw	low (STR_13| (0+32768))
   1320     034C  00F8               	movwf	AT_command@at_command
   1321     034D  3085               	movlw	high (STR_13| (0+32768))
@@ -1342,11 +1342,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1323     034F  3185  25BA  3183   	fcall	_AT_command
   1324     0352                     l1949:
   1325                           
-  1326                           ;main.c: 145:         SLEEP_start();
+  1326                           ;main.c: 139:         SLEEP_start();
   1327     0352  3186  265D  3183   	fcall	_SLEEP_start
   1328     0355                     l1951:
   1329                           
-  1330                           ;main.c: 148:         sleep_counter++;
+  1330                           ;main.c: 142:         sleep_counter++;
   1331     0355  3001               	movlw	1
   1332     0356  0140               	movlb	0	; select bank0
   1333     0357  00CB               	movwf	??_main
@@ -1354,7 +1354,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1335     0359  07CE               	addwf	main@sleep_counter,f
   1336     035A                     l1953:
   1337                           
-  1338                           ;main.c: 150:         if(sleep_counter >= 1){
+  1338                           ;main.c: 144:         if(sleep_counter >= 1){
   1339     035A  084E               	movf	main@sleep_counter,w
   1340     035B  1903               	btfsc	3,2
   1341     035C  2B5E               	goto	u1551
@@ -1364,11 +1364,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1345     035F                     u1550:
   1346     035F                     l1955:
   1347                           
-  1348                           ;main.c: 152:             sleep_counter = 0;
+  1348                           ;main.c: 146:             sleep_counter = 0;
   1349     035F  01CE               	clrf	main@sleep_counter
   1350     0360                     l1957:
   1351                           
-  1352                           ;main.c: 154:             AT_command("Wake up !!");
+  1352                           ;main.c: 148:             AT_command("Wake up !!");
   1353     0360  3013               	movlw	low (STR_1| (0+32768))
   1354     0361  00F8               	movwf	AT_command@at_command
   1355     0362  3086               	movlw	high (STR_1| (0+32768))
@@ -1376,7 +1376,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1357     0364  3185  25BA  3183   	fcall	_AT_command
   1358     0367                     l1959:
   1359                           
-  1360                           ;main.c: 156:             if(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
+  1360                           ;main.c: 150:             if(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
   1361     0367  3046               	movlw	low (STR_7| (0+32768))
   1362     0368  0140               	movlb	0	; select bank0
   1363     0369  00A0               	movwf	AT_command_check@at_command
@@ -1398,17 +1398,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1379     037A                     u1560:
   1380     037A                     l1961:
   1381                           
-  1382                           ;main.c: 158:                 LoRa_setup();
+  1382                           ;main.c: 152:                 LoRa_setup();
   1383     037A  3184  2464  3183   	fcall	_LoRa_setup
   1384     037D                     l1963:
   1385                           
-  1386                           ;main.c: 163:             battery = Analog_read_percent();
+  1386                           ;main.c: 157:             battery = Analog_read_percent();
   1387     037D  3184  24AE  3183   	fcall	_Analog_read_percent
   1388     0380  0140               	movlb	0	; select bank0
   1389     0381  00CD               	movwf	main@battery
   1390     0382                     l1965:
   1391                           
-  1392                           ;main.c: 166:             LoRa_send_data(0x2525, 0x2323, battery);
+  1392                           ;main.c: 160:             LoRa_send_data(0x2525, 0x2323, battery);
   1393     0382  3025               	movlw	37
   1394     0383  00A0               	movwf	LoRa_send_data@temperature
   1395     0384  3025               	movlw	37
@@ -1469,7 +1469,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1445                           ; Regs used in _WDT_setup: [wreg+status,2+status,0]
   1446                           
   1447                           
-  1448                           ;./watchdog_driver.h: 7:     WDTCONbits.PS = 0b10000;
+  1448                           ;./watchdog_driver.h: 8:     WDTCONbits.PS = 0b10000;
   1449     0654  0143               	movlb	3	; select bank3
   1450     0655  080C               	movf	12,w	;volatile
   1451     0656  39C1               	andlw	-63
@@ -1483,7 +1483,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1459     065D                     __ptext2:	
   1460 ;; *************** function _SLEEP_start *****************
   1461 ;; Defined at:
-  1462 ;;		line 10 in file "./watchdog_driver.h"
+  1462 ;;		line 11 in file "./watchdog_driver.h"
   1463 ;; Parameters:    Size  Location     Type
   1464 ;;		None
   1465 ;; Auto vars:     Size  Location     Type
@@ -1615,7 +1615,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1581     0485  2C93               	goto	l1907
   1582     0486                     l1905:
   1583                           
-  1584                           ;./lora_driver.h: 17:         _delay((unsigned long)((20000)*(1000000/4000.0)));
+  1584                           ;./lora_driver.h: 19:         _delay((unsigned long)((20000)*(1000000/4000.0)));
   1585     0486  301A               	movlw	26
   1586     0487  0140               	movlb	0	; select bank0
   1587     0488  00A6               	movwf	??_LoRa_setup+1
@@ -1632,7 +1632,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1598     0492  0000               	nop
   1599     0493                     l1907:
   1600                           
-  1601                           ;./lora_driver.h: 16:     while(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21
+  1601                           ;./lora_driver.h: 18:     while(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21
       +                          )){
   1602     0493  3046               	movlw	low (STR_7| (0+32768))
   1603     0494  0140               	movlb	0	; select bank0
@@ -1655,7 +1655,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1620     04A6                     u1540:
   1621     04A6                     l1909:
   1622                           
-  1623                           ;./lora_driver.h: 19:     EUSART_print("Connected !");
+  1623                           ;./lora_driver.h: 21:     EUSART_print("Connected !");
   1624     04A6  30EF               	movlw	low (STR_11| (0+32768))
   1625     04A7  00F2               	movwf	EUSART_print@string
   1626     04A8  3085               	movlw	high (STR_11| (0+32768))
@@ -1669,7 +1669,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1634     0403                     __ptext4:	
   1635 ;; *************** function _AT_command_check *****************
   1636 ;; Defined at:
-  1637 ;;		line 37 in file "./lora_driver.h"
+  1637 ;;		line 39 in file "./lora_driver.h"
   1638 ;; Parameters:    Size  Location     Type
   1639 ;;  at_command      2    0[BANK0 ] PTR const unsigned char 
   1640 ;;		 -> STR_17(8), STR_9(8), STR_4(3), 
@@ -1718,24 +1718,24 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1678                           ; Regs used in _AT_command_check: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   1679                           
   1680                           
-  1681                           ;./lora_driver.h: 39:     EUSART_clear_buffer(RX_buffer, 80);
+  1681                           ;./lora_driver.h: 41:     EUSART_clear_buffer(RX_buffer, 80);
   1682     0403  3050               	movlw	80
   1683     0404  00F1               	movwf	EUSART_clear_buffer@size
   1684     0405  30A0               	movlw	(low (_RX_buffer| 0))& (0+255)
   1685     0406  3185  25A5  3184   	fcall	_EUSART_clear_buffer
   1686     0409                     l1867:
   1687                           
-  1688                           ;./lora_driver.h: 40:     RX_index = 0;
+  1688                           ;./lora_driver.h: 42:     RX_index = 0;
   1689     0409  01FC               	clrf	_RX_index
   1690                           
-  1691                           ;./lora_driver.h: 42:     uint8_t tmp;;./lora_driver.h: 43:     while(PIR3bits.RC2IF){
+  1691                           ;./lora_driver.h: 44:     uint8_t tmp;;./lora_driver.h: 45:     while(PIR3bits.RC2IF){
   1692     040A  2C0D               	goto	l1871
   1693     040B                     l1869:
   1694     040B  014C               	movlb	12	; select bank12
   1695     040C  0816               	movf	22,w	;volatile
   1696     040D                     l1871:
   1697                           
-  1698                           ;./lora_driver.h: 43:     while(PIR3bits.RC2IF){
+  1698                           ;./lora_driver.h: 45:     while(PIR3bits.RC2IF){
   1699     040D  0141               	movlb	1	; select bank1
   1700     040E  1A8F               	btfsc	15,5	;volatile
   1701     040F  2C11               	goto	u1491
@@ -1745,19 +1745,19 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1705     0412                     u1490:
   1706     0412                     l191:
   1707                           
-  1708                           ;./lora_driver.h: 46:     RC2STAbits.CREN = 0;
+  1708                           ;./lora_driver.h: 48:     RC2STAbits.CREN = 0;
   1709     0412  014C               	movlb	12	; select bank12
   1710     0413  121A               	bcf	26,4	;volatile
   1711                           
-  1712                           ;./lora_driver.h: 47:     RC2STAbits.CREN = 1;
+  1712                           ;./lora_driver.h: 49:     RC2STAbits.CREN = 1;
   1713     0414  161A               	bsf	26,4	;volatile
   1714                           
-  1715                           ;./lora_driver.h: 49:     PIE3bits.RC2IE = 1;
+  1715                           ;./lora_driver.h: 51:     PIE3bits.RC2IE = 1;
   1716     0415  0141               	movlb	1	; select bank1
   1717     0416  1699               	bsf	25,5	;volatile
   1718     0417                     l1873:
   1719                           
-  1720                           ;./lora_driver.h: 51:     EUSART_print(at_command);
+  1720                           ;./lora_driver.h: 53:     EUSART_print(at_command);
   1721     0417  0140               	movlb	0	; select bank0
   1722     0418  0821               	movf	AT_command_check@at_command+1,w
   1723     0419  00F3               	movwf	EUSART_print@string+1
@@ -1766,11 +1766,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1726     041C  3185  2538  3184   	fcall	_EUSART_print
   1727     041F                     l1875:
   1728                           
-  1729                           ;./lora_driver.h: 52:     EUSART_write(0x0A);
+  1729                           ;./lora_driver.h: 54:     EUSART_write(0x0A);
   1730     041F  300A               	movlw	10
   1731     0420  3186  2634  3184   	fcall	_EUSART_write
   1732     0423                     l1877:	
-  1733                           ;./lora_driver.h: 55:     while(RX_index < response_size+2);
+  1733                           ;./lora_driver.h: 57:     while(RX_index < response_size+2);
   1734                           
   1735     0423  0140               	movlb	0	; select bank0
   1736     0424  0824               	movf	AT_command_check@response_size,w
@@ -1796,7 +1796,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1756     0436                     u1500:
   1757     0436                     l1879:
   1758                           
-  1759                           ;./lora_driver.h: 56:     _delay((unsigned long)((5)*(1000000/4000.0)));
+  1759                           ;./lora_driver.h: 58:     _delay((unsigned long)((5)*(1000000/4000.0)));
   1760     0436  30FA               	movlw	250
   1761     0437                     u1597:
   1762     0437  3200               	nop2
@@ -1804,17 +1804,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1764     0439  2C37               	goto	u1597
   1765     043A                     l1881:
   1766                           
-  1767                           ;./lora_driver.h: 58:     PIE3bits.RC2IE = 0;
+  1767                           ;./lora_driver.h: 60:     PIE3bits.RC2IE = 0;
   1768     043A  0141               	movlb	1	; select bank1
   1769     043B  1299               	bcf	25,5	;volatile
   1770     043C                     l1883:
   1771                           
-  1772                           ;./lora_driver.h: 59:     for(uint8_t i=0; i<response_size; i++){
+  1772                           ;./lora_driver.h: 61:     for(uint8_t i=0; i<response_size; i++){
   1773     043C  01FB               	clrf	AT_command_check@i
   1774     043D  2C5B               	goto	l1893
   1775     043E                     l1885:
   1776                           
-  1777                           ;./lora_driver.h: 61:         if(RX_buffer[i] != expected_response[i]){
+  1777                           ;./lora_driver.h: 63:         if(RX_buffer[i] != expected_response[i]){
   1778     043E  0823               	movf	AT_command_check@expected_response+1,w
   1779     043F  00F9               	movwf	??_AT_command_check+1
   1780     0440  0822               	movf	AT_command_check@expected_response,w
@@ -1842,12 +1842,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1802     0455                     u1510:
   1803     0455                     l1887:
   1804                           
-  1805                           ;./lora_driver.h: 62:             return 0;
+  1805                           ;./lora_driver.h: 64:             return 0;
   1806     0455  3000               	movlw	0
   1807     0456  2C63               	goto	l198
   1808     0457                     l1891:
   1809                           
-  1810                           ;./lora_driver.h: 64:     }
+  1810                           ;./lora_driver.h: 66:     }
   1811     0457  3001               	movlw	1
   1812     0458  00F8               	movwf	??_AT_command_check
   1813     0459  0878               	movf	??_AT_command_check,w
@@ -1864,7 +1864,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1824     0462                     u1520:
   1825     0462                     l1895:
   1826                           
-  1827                           ;./lora_driver.h: 65:     return 1;
+  1827                           ;./lora_driver.h: 67:     return 1;
   1828     0462  3001               	movlw	1
   1829     0463                     l198:
   1830     0463  0008               	return
@@ -1959,7 +1959,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1914     05BA                     __ptext6:	
   1915 ;; *************** function _AT_command *****************
   1916 ;; Defined at:
-  1917 ;;		line 68 in file "./lora_driver.h"
+  1917 ;;		line 70 in file "./lora_driver.h"
   1918 ;; Parameters:    Size  Location     Type
   1919 ;;  at_command      2    8[COMMON] PTR const unsigned char 
   1920 ;;		 -> STR_14(11), STR_13(12), STR_1(11), 
@@ -2003,7 +2003,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1953                           ; Regs used in _AT_command: [wreg-fsr0h+status,2+status,0+pclath+cstack]
   1954                           
   1955                           
-  1956                           ;./lora_driver.h: 69:     EUSART_print(at_command);
+  1956                           ;./lora_driver.h: 71:     EUSART_print(at_command);
   1957     05BA  0879               	movf	AT_command@at_command+1,w
   1958     05BB  00F3               	movwf	EUSART_print@string+1
   1959     05BC  0878               	movf	AT_command@at_command,w
@@ -2011,12 +2011,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1961     05BE  3185  2538  3185   	fcall	_EUSART_print
   1962     05C1                     l1861:
   1963                           
-  1964                           ;./lora_driver.h: 70:     EUSART_write(0x0A);
+  1964                           ;./lora_driver.h: 72:     EUSART_write(0x0A);
   1965     05C1  300A               	movlw	10
   1966     05C2  3186  2634  3185   	fcall	_EUSART_write
   1967     05C5                     l1863:
   1968                           
-  1969                           ;./lora_driver.h: 71:     _delay((unsigned long)((20)*(1000000/4000.0)));
+  1969                           ;./lora_driver.h: 73:     _delay((unsigned long)((20)*(1000000/4000.0)));
   1970     05C5  3007               	movlw	7
   1971     05C6  00FA               	movwf	??_AT_command
   1972     05C7  307D               	movlw	125
@@ -2034,7 +2034,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1984     04E5                     __ptext7:	
   1985 ;; *************** function _LoRa_send_data *****************
   1986 ;; Defined at:
-  1987 ;;		line 22 in file "./lora_driver.h"
+  1987 ;;		line 24 in file "./lora_driver.h"
   1988 ;; Parameters:    Size  Location     Type
   1989 ;;  temperature     2    0[BANK0 ] unsigned short 
   1990 ;;  humidity        2    2[BANK0 ] unsigned short 
@@ -2079,45 +2079,45 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2024                           ; Regs used in _LoRa_send_data: [wreg-fsr0h+status,2+status,0+pclath+cstack]
   2025                           
   2026                           
-  2027                           ;./lora_driver.h: 23:     EUSART_print("AT+MSGHEX=");
+  2027                           ;./lora_driver.h: 25:     EUSART_print("AT+MSGHEX=");
   2028     04E5  301E               	movlw	low (STR_12| (0+32768))
   2029     04E6  00F2               	movwf	EUSART_print@string
   2030     04E7  3086               	movlw	high (STR_12| (0+32768))
   2031     04E8  00F3               	movwf	EUSART_print@string+1
   2032     04E9  3185  2538  3184   	fcall	_EUSART_print
   2033                           
-  2034                           ;./lora_driver.h: 25:     EUSART_print_hex(temperature&0xFF);
+  2034                           ;./lora_driver.h: 27:     EUSART_print_hex(temperature&0xFF);
   2035     04EC  0140               	movlb	0	; select bank0
   2036     04ED  0820               	movf	LoRa_send_data@temperature,w
   2037     04EE  3185  255E  3184   	fcall	_EUSART_print_hex
   2038                           
-  2039                           ;./lora_driver.h: 26:     EUSART_print_hex((temperature >> 8)&0xFF);
+  2039                           ;./lora_driver.h: 28:     EUSART_print_hex((temperature >> 8)&0xFF);
   2040     04F1  0140               	movlb	0	; select bank0
   2041     04F2  0821               	movf	LoRa_send_data@temperature+1,w
   2042     04F3  3185  255E  3184   	fcall	_EUSART_print_hex
   2043                           
-  2044                           ;./lora_driver.h: 28:     EUSART_print_hex(humidity&0xFF);
+  2044                           ;./lora_driver.h: 30:     EUSART_print_hex(humidity&0xFF);
   2045     04F6  0140               	movlb	0	; select bank0
   2046     04F7  0822               	movf	LoRa_send_data@humidity,w
   2047     04F8  3185  255E  3184   	fcall	_EUSART_print_hex
   2048                           
-  2049                           ;./lora_driver.h: 29:     EUSART_print_hex((humidity >> 8)&0xFF);
+  2049                           ;./lora_driver.h: 31:     EUSART_print_hex((humidity >> 8)&0xFF);
   2050     04FB  0140               	movlb	0	; select bank0
   2051     04FC  0823               	movf	LoRa_send_data@humidity+1,w
   2052     04FD  3185  255E  3184   	fcall	_EUSART_print_hex
   2053                           
-  2054                           ;./lora_driver.h: 31:     EUSART_print_hex(battery);
+  2054                           ;./lora_driver.h: 33:     EUSART_print_hex(battery);
   2055     0500  0140               	movlb	0	; select bank0
   2056     0501  0824               	movf	LoRa_send_data@battery,w
   2057     0502  3185  255E  3184   	fcall	_EUSART_print_hex
   2058     0505                     l1913:
   2059                           
-  2060                           ;./lora_driver.h: 33:     EUSART_write(0x0A);
+  2060                           ;./lora_driver.h: 35:     EUSART_write(0x0A);
   2061     0505  300A               	movlw	10
   2062     0506  3186  2634  3184   	fcall	_EUSART_write
   2063     0509                     l1915:
   2064                           
-  2065                           ;./lora_driver.h: 34:     _delay((unsigned long)((20)*(1000000/4000.0)));
+  2065                           ;./lora_driver.h: 36:     _delay((unsigned long)((20)*(1000000/4000.0)));
   2066     0509  3007               	movlw	7
   2067     050A  00F8               	movwf	??_LoRa_send_data
   2068     050B  307D               	movlw	125
@@ -4738,7 +4738,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Wed Jan 24 17:55:20 2024
+Symbol Table                                                                                   Thu Mar 14 14:48:49 2024
 
                                l82 065F                                 l91 063D  
                                l85 05E1                                 l79 0659  

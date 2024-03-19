@@ -12,6 +12,8 @@ void LoRa_setup(void){
     if(!AT_command_check("AT", "+AT: OK", 7)){
         EUSART_print("RX/TX Fail");
     }
+    /*Set the right mode*/
+    //AT_command("AT+MODE=LWOTAA");
     // Check connection
     while(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
         __delay_ms(JOIN_RETRY_DELAY_MS);

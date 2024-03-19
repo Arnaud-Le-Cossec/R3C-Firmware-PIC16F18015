@@ -10981,6 +10981,7 @@ void SLEEP_start(void);
 void WDT_setup(void){
 
 
+
     WDTCONbits.PS = 0b10000;
 }
 
@@ -11254,6 +11255,8 @@ void LoRa_setup(void){
         EUSART_print("RX/TX Fail");
     }
 
+
+
     while(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
         _delay((unsigned long)((20000)*(1000000/4000.0)));
     };
@@ -11383,12 +11386,6 @@ void main(void) {
     float temp;
     float humidity;
     uint8_t battery;
-
-
-
-
-
-
 
     while(1){
 
