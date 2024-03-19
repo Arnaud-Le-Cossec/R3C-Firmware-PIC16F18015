@@ -149,7 +149,9 @@ void main(void) {
             /*Test Gateway connection*/
             if(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
                 /*Test fail, reconnect to LoRa*/
+                PORTA |= (1<<LED_PIN);		// Set LED to 1
                 LoRa_setup();
+                PORTA &= !(1<<LED_PIN);		// Set LED to 0
             }
             
             /*Measure sensors*/

@@ -2346,33 +2346,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! ! != -> ( _AT_command_check (3 , , :s 17C :s 18C -> -> 21 `i `uc `i -> 0 `i 997  ]
 {
 "152
-[; ;main.c: 152:                 LoRa_setup();
-[e ( _LoRa_setup ..  ]
+[; ;main.c: 152:                 PORTA |= (1<<2);
+[e =| _PORTA -> << -> 1 `i -> 2 `i `Vuc ]
 "153
-[; ;main.c: 153:             }
+[; ;main.c: 153:                 LoRa_setup();
+[e ( _LoRa_setup ..  ]
+"154
+[; ;main.c: 154:                 PORTA &= !(1<<2);
+[e =& _PORTA -> -> ! != << -> 1 `i -> 2 `i -> 0 `i `i `Vuc ]
+"155
+[; ;main.c: 155:             }
 }
 [e :U 997 ]
-"157
-[; ;main.c: 157:             battery = Analog_read_percent();
+"159
+[; ;main.c: 159:             battery = Analog_read_percent();
 [e = _battery ( _Analog_read_percent ..  ]
-"160
-[; ;main.c: 160:             LoRa_send_data(0x2525, 0x2323, battery);
-[e ( _LoRa_send_data (3 , , -> -> 9509 `i `us -> -> 8995 `i `us _battery ]
 "162
-[; ;main.c: 162:         }
+[; ;main.c: 162:             LoRa_send_data(0x2525, 0x2323, battery);
+[e ( _LoRa_send_data (3 , , -> -> 9509 `i `us -> -> 8995 `i `us _battery ]
+"164
+[; ;main.c: 164:         }
 }
 [e :U 996 ]
-"168
-[; ;main.c: 168:     }
+"170
+[; ;main.c: 170:     }
 }
 [e :U 993 ]
 [e $U 994  ]
 [e :U 995 ]
-"169
-[; ;main.c: 169:     return;
+"171
+[; ;main.c: 171:     return;
 [e $UE 992  ]
-"170
-[; ;main.c: 170: }
+"172
+[; ;main.c: 172: }
 [e :UE 992 ]
 }
 [a 8C 43 74 79 73 78 58 32 74 111 105 110 101 100 32 97 108 114 101 97 100 121 0 ]

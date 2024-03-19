@@ -11404,7 +11404,9 @@ void main(void) {
 
             if(!AT_command_check("AT+JOIN", "+JOIN: Joined already", 21)){
 
+                PORTA |= (1<<2);
                 LoRa_setup();
+                PORTA &= !(1<<2);
             }
 
 
