@@ -38,6 +38,33 @@ void I2C_setup(void){
 
 }
 
+void I2C_setup_slave(uint8_t slaveAddress){
+    /*Set RA1 (SCL) and RA2 (SDA) as inputs*/
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    ODCONAbits.ODCA1 = 1;
+    ODCONAbits.ODCA2 = 1;
+    RA1PPS = 0x15; // SCL1 output PPS address (on PIC16F18015)
+    RA2PPS = 0x16; // SDA1 output PPS address (on PIC16F18015)
+    SSP1CLKPPS = 0x1; // Set SCL1 input PPS to RA1 (on PIC16F18015)
+    SSP1DATPPS = 0x2; // Set SDA1 input PPS to RA2 (on PIC16F18015)
+    /**/
+    SSP1STATbits.SMP = 1; // Default settings + Standard speed
+    /*Host Synchronous Serial Port Mode Select bits*/
+    SSP1CON1bits.SSPM = 0b0110; // 7-bit slave mode
+    SSP1CON2bits.SEN = 1; // Enable clock stretching
+    SSP1CON3bits.SBCDE = 1; // Enable BCLIF
+    SSP1ADD = slaveAddress; // Load slave address
+    SSP1CON1bits.SSPEN = 1; // Enable the module
+    
+    PIR3bits.BCL1IF = 0; // Clear Bus Collision IF
+    PIR3bits.SSP1IF = 0; // Clear SSP interrupt flag
+    PIE3bits.BCL1IE = 1; // Enable BCLIF
+    PIE3bits.SSP1IE = 1; // Enable SSPIF
+    INTCONbits.PEIE = 1; // Enable periph interrupts
+    INTCONbits.GIE = 1; // Enable global interrupts
+}
+
 void I2C_wait(void){
    while ((SSP1STAT & 0b00000100) || (SSP1CON2 & 0x00011111)); //Check if busy
 }

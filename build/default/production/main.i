@@ -10970,6 +10970,8 @@ extern __bank0 __bit __timeout;
 
 
 
+
+
 uint8_t RX_buffer[80];
 uint8_t RX_index = 0;
 
@@ -10991,7 +10993,7 @@ void SLEEP_start(void){
 
     __asm("SLEEP");
 }
-# 59 "main.c" 2
+# 61 "main.c" 2
 
 # 1 "./eusart_driver.h" 1
 void EUSART_setup(void);
@@ -11067,7 +11069,7 @@ void EUSART_clear_buffer(uint8_t *buffer, uint8_t size){
         buffer[i] = 0;
     }
 }
-# 60 "main.c" 2
+# 62 "main.c" 2
 
 # 1 "./i2c_driver.h" 1
 void I2C_setup(void);
@@ -11108,6 +11110,33 @@ void I2C_setup(void){
 
     SSP1CON1bits.SSPEN = 1;
 
+}
+
+void I2C_setup_slave(uint8_t slaveAddress){
+
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    ODCONAbits.ODCA1 = 1;
+    ODCONAbits.ODCA2 = 1;
+    RA1PPS = 0x15;
+    RA2PPS = 0x16;
+    SSP1CLKPPS = 0x1;
+    SSP1DATPPS = 0x2;
+
+    SSP1STATbits.SMP = 1;
+
+    SSP1CON1bits.SSPM = 0b0110;
+    SSP1CON2bits.SEN = 1;
+    SSP1CON3bits.SBCDE = 1;
+    SSP1ADD = slaveAddress;
+    SSP1CON1bits.SSPEN = 1;
+
+    PIR3bits.BCL1IF = 0;
+    PIR3bits.SSP1IF = 0;
+    PIE3bits.BCL1IE = 1;
+    PIE3bits.SSP1IE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
 }
 
 void I2C_wait(void){
@@ -11199,7 +11228,7 @@ void I2C_MCP23008_read(void){
     uint8_t rx_data[11];
     I2C_read_query(0x27, rx_data, 11);
 }
-# 61 "main.c" 2
+# 63 "main.c" 2
 
 # 1 "./analog_driver.h" 1
 
@@ -11237,7 +11266,7 @@ uint8_t Analog_read_percent(void){
     uint8_t r = a*(100.0/1023.0);
     return r;
 }
-# 62 "main.c" 2
+# 64 "main.c" 2
 
 # 1 "./lora_driver.h" 1
 
@@ -11314,7 +11343,30 @@ void AT_command(const char * at_command){
     EUSART_write(0x0A);
     _delay((unsigned long)((20)*(1000000/4000.0)));
 }
-# 63 "main.c" 2
+# 65 "main.c" 2
+
+# 1 "./remote_mode_driver.h" 1
+
+
+
+int remote_check(void){
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 0;
+
+
+    if (PORTAbits.RA1 == 0){
+
+        PORTAbits.RA2 = 0;
+        while(PORTAbits.RA1 == 0){
+
+            PORTAbits.RA2 = 1;
+        }
+        return 1;
+    }
+
+    return 0;
+}
+# 66 "main.c" 2
 
 
 
@@ -11327,11 +11379,10 @@ void __attribute__((picinterrupt(("")))) ISR(void){
 
     if(PIR3bits.RC2IF){
 
-
-            if(RX_index < 80){
-                RX_buffer[RX_index] = RC2REG;
-                RX_index ++;
-            }
+        if(RX_index < 80){
+            RX_buffer[RX_index] = RC2REG;
+            RX_index ++;
+        }
 
         if(RC2STAbits.FERR){
 
@@ -11348,6 +11399,13 @@ void __attribute__((picinterrupt(("")))) ISR(void){
 
     }
 
+    if(PIR3bits.SSP1IF){
+        if(SSP1STATbits.R_nW == 1){
+            SSP1BUF = 0xF0 | 1;
+            SSP1CON1bits.CKP = 1;
+        }
+    }
+
 }
 
 
@@ -11360,6 +11418,12 @@ void main(void) {
     TRISA &= !(1<<2);
 
     ANSELA = 0x0;
+
+
+    if(remote_check()){
+        I2C_setup_slave(0x30);
+        while(1);
+    }
 
 
 

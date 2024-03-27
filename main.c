@@ -50,6 +50,8 @@
 #include <xc.h>
 #include <pic16f18015.h>
 
+#define FIRMWARE_VER 1
+
 #define _XTAL_FREQ 1000000  // 32Mhz configuration de la carte
 
 #define RX_BUFFER_SIZE 80
@@ -61,6 +63,7 @@ uint8_t RX_index = 0;
 #include "i2c_driver.h"
 #include "analog_driver.h"
 #include "lora_driver.h"
+#include "remote_mode_driver.h"
 
 #define LED_PIN 2
 
@@ -72,12 +75,11 @@ void __interrupt() ISR(void){
 
     if(PIR3bits.RC2IF){ // handle RX pin interrupts
         
-        //while(PIR3bits.RC2IF){
-            if(RX_index < RX_BUFFER_SIZE){
-                RX_buffer[RX_index] = RC2REG;
-                RX_index ++;
-            }
-        //}
+        if(RX_index < RX_BUFFER_SIZE){
+            RX_buffer[RX_index] = RC2REG;
+            RX_index ++;
+        }
+
         if(RC2STAbits.FERR){
             //PORTA ^= (1<<LED_PIN);
             RC2STAbits.SPEN = 0;
@@ -92,6 +94,13 @@ void __interrupt() ISR(void){
         
         //PIR3bits.RC2IF = 0;
     } // end RX pin interrupt handlers
+    
+    if(PIR3bits.SSP1IF){ // handle i2c in slave mode Check for SSPIF    
+        if(SSP1STATbits.R_nW == 1){ // Master read (slave transmit)
+            SSP1BUF = 0xF0 | FIRMWARE_VER; // Load array value
+            SSP1CON1bits.CKP = 1; // Release clock stretch
+        }
+    }
 
 } // end ISRs*/
 
@@ -105,6 +114,12 @@ void main(void) {
     TRISA &= !(1<<LED_PIN);		// Set outputs
     
     ANSELA = 0x0;
+    
+    /*Check if we are in remote mode*/
+    if(remote_check()){
+        I2C_setup_slave(0x30);
+        while(1);
+    }
     
     /*Setup I2C*/
     //I2C_setup();
